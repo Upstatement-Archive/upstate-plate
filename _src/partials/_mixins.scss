@@ -1,0 +1,58 @@
+/* !== Transitions ==================================== */
+
+$t: .2s !default; /* Transition: Time */
+$trans-function: ease-in !default; /* Transition: Type */
+$trans-property: all !default;
+
+@mixin trans($t,$trans-property,$trans-function) {
+	@include single-transition(#{$trans-property}, #{$t}, #{$trans-function}, false);
+	}
+
+
+/* !== Sprites ==================================== */
+
+// Let Compass make Sprites for us
+// http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites/base";
+
+// To create new sprites, make a new folder in _img and 
+// copy/paste the pattern below, replacing the first instance
+// of the word "sprite" with the new folder name
+$sprite-sprite-dimensions: true;
+@import "sprite/*.png";
+@include all-sprite-sprites;
+
+
+/* !== Paul Irish HTML5 Helpers =================== */
+
+// Image replacement
+@mixin ir { 
+	display: block; 
+	text-indent: -999em; 
+	overflow: hidden; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	direction: ltr; 
+	}
+
+/* Hide for both screenreaders and browsers
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+@mixin hidden { 
+	display: none; 
+	visibility: hidden; } 
+
+/* Hide only visually, but have it available for screenreaders 
+   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
+@mixin visuallyhidden { 
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px); }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+@mixin invisible { 
+	visibility: hidden; 
+	}

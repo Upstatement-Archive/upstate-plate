@@ -1,0 +1,144 @@
+// Bring in all Compass Helpers 
+// as well as Tito's base style files 
+@import "partials/base";
+
+
+/*	Primary Stylesheet						     
+	Author: Tito Bottitta + Upstatement			 */ 
+
+
+/* ============================================= */
+
+/*	Universal						   			 */ 
+
+/* ============================================= */
+
+
+// Default link style, recommend keeping minimal 
+// (similar to this) or you'll just end up overwriting it like crazy 
+a {
+	text-decoration: none;
+	color: inherit;
+	&:hover {
+		
+		}
+	}
+
+
+/* ============================================= */
+
+/*	Typography						   			 */ 
+
+/* ============================================= */
+
+strong, .strong {
+	font-weight: bold;
+	}
+
+em {
+	font-style: italic;
+	}
+
+
+
+/* ============================================= */
+
+/*	Layout 							   			 */ 
+
+/* ============================================= */
+
+
+
+
+
+
+/* ============================================= */
+
+/*	Objects							   			 */ 
+
+/* ============================================= */
+
+
+
+
+
+
+/* ! ============================================= */
+
+/* ! Header & Main Navigation	   				   */ 
+
+/* ! ============================================= */
+
+
+
+
+
+
+/* ! ============================================= */
+
+/* ! Footer							   			   */ 
+
+/* ! ============================================= */
+
+
+
+
+
+
+
+/* ! ============================================= */
+
+/* ! Homepage						   			   */ 
+
+/* ! ============================================= */
+
+
+
+
+
+
+
+
+/* ! ============================================= */
+
+/* ! Media Queries							      */
+
+/* ! ============================================= */
+
+
+@media all and (orientation:portrait) { 
+  /* Style adjustments for portrait mode goes here */
+  
+}
+
+@media all and (orientation:landscape) { 
+  /* Style adjustments for landscape mode goes here */
+  
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+   Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+  
+  
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+
+
+
+/* ============================================= */
+
+/*	Print Styles							     
+	Inline to avoid required HTTP connection     */
+
+/* ============================================= */
+
+// Import Print Styles
+@import "partials/print";
+
+
+
