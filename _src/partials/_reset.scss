@@ -45,6 +45,9 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
+// Make sure extra height isn't added to images
+img { line-height: 0; }
+
 nav ul { list-style: none; }
 
 blockquote, q { quotes: none; }
