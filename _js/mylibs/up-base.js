@@ -64,7 +64,38 @@ $(document).ready(function() {
   	initToolTips();
 
 }); /* end jQuery functions */
-	
+
+/* Universal Functions */
+
 function trace(msg){
 	try{console.log(msg);} catch(e){}
+}
+
+Array.prototype.getRandom = function(){
+	var r = Math.floor(Math.random() * this.length);
+	return this[r];
+}
+
+Array.prototype.getLast = function(){
+	var l = this.length - 1;
+	return this[l];
+}
+
+Array.prototype.remove = function(removeMe){
+	var index = this.indexOf(removeMe);
+	if (index > -1){
+		this.splice(index, 1);
+	}
+	return this;
+}
+
+Array.prototype.fill = function(size, oneBased){
+	for (var i = 0; i<size; i++){
+		var j = i;
+		if (oneBased){
+			j = i + 1;
+		}
+		this.push(j);
+	}
+	return this;
 }
