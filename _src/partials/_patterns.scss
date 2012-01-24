@@ -1,14 +1,5 @@
 /* ---------------------------------------------- */
 
-/*	Project Variables						 	  */ 
-
-/* ---------------------------------------------- */
-
-$highlight: #ea4c88;
-
-
-/* ---------------------------------------------- */
-
 /*	Typography						 			  */ 
 
 /* ---------------------------------------------- */
@@ -640,6 +631,43 @@ $popover-box-padding: 10px !default;
 	}
 
 
+/* !-- Modals ----------------------------------- */
+
+// Overrides default modal overlay style
+.simplemodal-overlay {
+	@include background-image(radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.9)));
+	opacity: 1 !important;
+	max-height: 100%;
+	}
+
+// Base modal box styles
+@mixin modal-box {
+	padding: 8px;
+	background-color: #f5f5f5;
+	background-color: rgba(255, 255, 255, .5);
+	@include border-radius(16px);
+	.modal-content {
+		background-color: #fff;
+		padding: 20px;
+		@include border-radius(8px);
+		@include box-shadow(rgba(0,0,0,.35), 0px, 5px, 80px, 0);
+		}
+	}
+
+// Base modal style, hidden by default
+.modal {
+	@include modal-box;
+	display: none;
+	margin: auto;
+	position: fixed;
+	top: 30%;
+	left: 5%;
+	right: 5%;
+	width: 75%;
+	max-width: 480px;
+	z-index: 9999;
+	}
+
 
 /* ---------------------------------------------- */
 
@@ -992,6 +1020,28 @@ $form-size: med !default;
 		margin-top: 7px;
 		}
 	}
+
+$sidesaddle-width: 130px; //Default width for sidesaddle labels
+
+@mixin sidesaddle {
+	// Float the label left	
+	.form-row > label {
+		float: left;
+		width: $sidesaddle-width;
+		text-align: right;
+		} 
+	// Shift over the inside div to align all label's relevant content
+	.input,
+	.legend-h,
+	.input-prepend,
+	.input-append {
+		margin-left: $sidesaddle-width + 20px;
+		}
+	.form-actions {
+		padding-left: $sidesaddle-width + 20px; 
+		}
+	} // end sidesaddle
+
 	
 // Mixin used to create any form size
 @mixin form($form-size) {
@@ -1035,20 +1085,7 @@ $sidesaddle-width: 130px; //Default width for sidesaddle labels
 
 	// Sidesaddle labels
 	&.sidesaddle {
-		// Float the label left	
-		.form-row > label {
-			float: left;
-			width: $sidesaddle-width;
-			text-align: right;
-			} 
-		// Shift over the inside div to align all label's relevant content
-		.input,
-		.legend-h {
-			margin-left: $sidesaddle-width + 20px;
-			}
-		.form-actions {
-			padding-left: $sidesaddle-width + 20px; 
-			}
+		@include sidesaddle;
 		}
 	
 	.form-row {

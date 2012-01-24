@@ -208,5 +208,23 @@
 	</article> <!-- /.text -->
 	</div></li>
 
+<li class="style-node">
+	<label class="style-node-h">Modals</label>
+	<div class="style-meta-container">
+		<dl class="style-meta">
+			<dt>Note</dt>
+			<dd>Interstitial screens for messages, alerts, forms, etc.</dd>
+			<?php echo $code_snip ?>
+		</dl> 
+	</div> <!-- style-meta -->
+	<div class="style-example">
+		<a class="modal-trigger btn">Click to Launch Modal</a> 
+		<section class="modal">
+			<div class="modal-content">
+				<p class="txt-l">This is an example of a modal container with content inside. Click anywhere outside the modal to dismiss. Or hit ESC. Or make yourself a close button.</p>
+			</div> <!-- /.modal-content -->
+		</section> <!-- /.modal -->
+	</div></li>
+
 </ul>
 </div> <!-- style-container -->

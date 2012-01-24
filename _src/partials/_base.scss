@@ -44,14 +44,11 @@
 
 /* !============================================= */
 
-/* ! Universal Variables						  */ 
+/* ! Variables						  			  */ 
 
 /* !============================================= */
 
-$blue: #1d78af;
-
-$link: $blue;
-$link-hover: darken($link, 8%);
+/* !-- Universal ------------------------------------ */
 
 $black-5: #f5f5f5;
 $black-10: #ededed;
@@ -61,9 +58,19 @@ $black-75: #666;
 $black-90: #222; 
 $black-95: #111; 
 
+
+/* !-- Project ------------------------------------ */
+
+$blue: #1d78af;
+
+$link: $blue;
+$link-hover: darken($link, 8%);
+$highlight: #ea4c88;  //Pink
+
 $sans:Arial,Helvetica,Verdana,sans-serif;
 $serif:Georgia,Times,Times New Roman,serif;
 $mono:"Courier New",Courier,mono;
+
 
 
 /* !============================================= */

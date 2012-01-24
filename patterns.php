@@ -77,8 +77,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
   <script>window.jQuery || document.write('<script src="_js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-  <script src="//cdn.jquerytools.org/1.2.5/all/jquery.tools.min.js"></script>  
-  <script>window.tabs || document.write('<script src="_js/libs/jquery.tools.min.js"><\/script>')</script>
+  <script src="_js/libs/jquery.tools.min.js"></script>  
+
+  <!-- Modals: Do you enjoy modals? Yes you do -->
+  <script type="text/javascript" src="_js/libs/jquery.simplemodal.1.4.2.min.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="_js/plugins.js"></script>

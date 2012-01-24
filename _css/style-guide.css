@@ -48,6 +48,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+img {
+  line-height: 0;
+}
+
 nav ul {
   list-style: none;
 }
@@ -379,14 +383,14 @@ button {
 }
 
 /* !============================================= */
-/* ! Universal Variables						  */
+/* ! Variables						  			  */
 /* !============================================= */
+/* !-- Universal ------------------------------------ */
+/* !-- Project ------------------------------------ */
 /* !============================================= */
 /* ! General Mixins			   			  		  */
 /* !============================================= */
 /* !== Transitions ==================================== */
-/* Transition: Time */
-/* Transition: Type */
 /* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
   background: url('../_img/sprite-s5a8af3b92a.png') no-repeat;
@@ -437,7 +441,7 @@ button {
 }
 
 #style-hdr {
-  background: #222222 url('../_img/bg-leather') 50% 50% repeat;
+  background: #222222 url('../_img/bg-leather.png?1325720619') 50% 50% repeat;
   padding: 20px 0;
   position: fixed;
   top: 0;
@@ -491,10 +495,10 @@ button {
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
-  -moz-transition-timing-function: ease-in;
-  -webkit-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
+  -moz-transition-timing-function: all;
+  -webkit-transition-timing-function: all;
+  -o-transition-timing-function: all;
+  transition-timing-function: all;
   color: #999;
   display: block;
   float: left;

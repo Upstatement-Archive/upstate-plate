@@ -48,6 +48,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+img {
+  line-height: 0;
+}
+
 nav ul {
   list-style: none;
 }
@@ -379,14 +383,14 @@ button {
 }
 
 /* !============================================= */
-/* ! Universal Variables						  */
+/* ! Variables						  			  */
 /* !============================================= */
+/* !-- Universal ------------------------------------ */
+/* !-- Project ------------------------------------ */
 /* !============================================= */
 /* ! General Mixins			   			  		  */
 /* !============================================= */
 /* !== Transitions ==================================== */
-/* Transition: Time */
-/* Transition: Type */
 /* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
   background: url('../_img/sprite-s5a8af3b92a.png') no-repeat;

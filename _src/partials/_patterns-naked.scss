@@ -1,15 +1,5 @@
 /* ---------------------------------------------- */
 
-/*	Project Variables						 	  */ 
-
-/* ---------------------------------------------- */
-
-$highlight: #ea4c88;
-
-
-
-/* ---------------------------------------------- */
-
 /*	Typography						 			  */ 
 
 /* ---------------------------------------------- */
@@ -552,6 +542,23 @@ $popover-box-padding: 10px !default;
 	}
 
 
+/* !-- Modals ----------------------------------- */
+
+// Overrides default modal overlay style
+.simplemodal-overlay {
+	
+	}
+
+// Base modal box styles
+@mixin modal-box {
+
+	}
+
+// Base modal style, hidden by default
+.modal {
+	display: none;
+	}
+
 
 /* ---------------------------------------------- */
 
@@ -836,6 +843,28 @@ $form-size: med !default;
 		margin-top: 7px;
 		}
 	}
+
+$sidesaddle-width: 130px; //Default width for sidesaddle labels
+
+@mixin sidesaddle {
+	// Float the label left	
+	.form-row > label {
+		float: left;
+		width: $sidesaddle-width;
+		text-align: right;
+		} 
+	// Shift over the inside div to align all label's relevant content
+	.input,
+	.legend-h,
+	.input-prepend,
+	.input-append {
+		margin-left: $sidesaddle-width + 20px;
+		}
+	.form-actions {
+		padding-left: $sidesaddle-width + 20px; 
+		}
+	} // end sidesaddle
+
 	
 // Mixin used to create any form size
 @mixin form($form-size) {
@@ -871,28 +900,13 @@ $form-size: med !default;
 
 /* !-- Universal Form Styles ----------------------------------- */
 
-$sidesaddle-width: 130px; //Default width for sidesaddle labels
-
 .form-basic {
 	@include pie-clearfix;
 	margin-bottom: 18px;
 
 	// Sidesaddle labels
 	&.sidesaddle {
-		// Float the label left	
-		.form-row > label {
-			float: left;
-			width: $sidesaddle-width;
-			text-align: right;
-			} 
-		// Shift over the inside div to align all label's relevant content
-		.input,
-		.legend-h {
-			margin-left: $sidesaddle-width + 20px;
-			}
-		.form-actions {
-			padding-left: $sidesaddle-width + 20px; 
-			}
+		@include sidesaddle;
 		}
 	
 	.form-row {

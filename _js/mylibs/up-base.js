@@ -58,11 +58,25 @@ $(document).ready(function() {
 			$(this).toggleClass("pop-active");
   		});
   	}
+
+	function initModals(){
+		// Apply modal action to anything with ID of "modal"
+		// Launch when user clicks any object with a class of "modal-trigger"
+		$('.modal-trigger').click(function(){
+				$('.modal').modal();
+			});
+		// Create a close button for the modal, dismiss modal by clicking the background
+		$('.close-modal, .simplemodal-overlay').live('click', function(){
+			$.modal.close();
+		});
+	}
+
   	initClassFixing();
   	initTabs();
   	initDropDowns();
   	initToolTips();
-
+  	initModals();
+  	
 }); /* end jQuery functions */
 
 /* Universal Functions */
