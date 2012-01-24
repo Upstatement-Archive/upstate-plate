@@ -1,0 +1,6 @@
+wp-content/themes/ace/.sass-cache
+wp-content/themes/ace/.sass-cache/
+wp-content/themes/ace/.sass-cache/*
+wp-content/themes/ace/.sass-cache/**
+wp-content/themes/ace/.sass-cache/*.scssc
+*.scssc
