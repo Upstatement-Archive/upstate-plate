@@ -1,11 +1,37 @@
 /* !== Transitions ==================================== */
 
-$t: .2s !default; /* Transition: Time */
-$trans-function: ease-in !default; /* Transition: Type */
-$trans-property: all !default;
+$context: 960 !default;
 
-@mixin trans($t,$trans-property,$trans-function) {
-	@include single-transition(#{$trans-property}, #{$t}, #{$trans-function}, false);
+@mixin respw($target, $context){
+	width: percentage($target / $context); 
+	}
+
+@function resp($target, $context){
+	@return percentage($target / $context); 
+	}
+
+@function em($px, $doc:13){
+	@return #{($px/$doc)}em;	
+	}
+
+@mixin trans($trans-time: .2s,$trans-property: ease-in, $trans-function: all) {
+	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
+	}
+
+@mixin user-select($user-select: none) {
+	-webkit-user-select: #{$user-select};
+	-khtml-user-select: #{$user-select};
+	-moz-user-select: #{$user-select};
+	-ms-user-select: #{$user-select};
+	-o-user-select: #{$user-select};
+	user-select: #{$user-select};
+	}
+
+@mixin reset-clearfix {
+	&:after {
+		display: initial;
+		clear: none;
+		}
 	}
 
 
@@ -21,6 +47,9 @@ $trans-property: all !default;
 $sprite-sprite-dimensions: true;
 @import "sprite/*.png";
 @include all-sprite-sprites;
+
+// Provide a map and var name to use in conjunction with other sprite mixins
+$sprite: sprite-map("sprite/*.png"); 
 
 
 /* !== Paul Irish HTML5 Helpers =================== */
