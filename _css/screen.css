@@ -310,8 +310,8 @@ button {
 /* ! Universal						   			  */
 /* !============================================= */
 /* Kill the margin on the last column */
-.col:last-child,
-.col.last {
+.ui-block:last-child,
+.ui-block.last {
   margin-right: 0;
 }
 
@@ -320,18 +320,19 @@ button {
 /* !============================================= */
 /* Grid-2 vars */
 /* Grid-3 vars */
+/* Grid-3-rrl vars */
 /* Grid-4 vars */
 /* Grid-5 vars */
 /* ! Columns */
-.col-25 {
+.ui-block-25 {
   width: 25%;
 }
 
-.col-50 {
+.ui-block-50 {
   width: 50%;
 }
 
-.col-75 {
+.ui-block-75 {
   width: 75%;
 }
 
@@ -422,6 +423,9 @@ button {
 /* !============================================= */
 /* ! Patterns			   			  		  	  */
 /* !============================================= */
+/* NOTE: Uncomment only one of these imports below, 
+   uncommenting both may result in a scenario too 
+   horrible to comprehend. */
 /* !============================================= */
 /* ! Custom Fonts					   			  */
 /* !============================================= */
