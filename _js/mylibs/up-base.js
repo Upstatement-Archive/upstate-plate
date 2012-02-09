@@ -41,9 +41,9 @@ $(document).ready(function() {
 
 		// Set dropdowns on hover
 		$(".dropdown-trigger-hover").hover(function() {
-            $(this).addClass("dropdown-active");
+            $(this).parent(".dropdown").addClass("dropdown-active");
         }, function() {
-            $(this).removeClass("dropdown-active");
+            $(this).parent(".dropdown").removeClass("dropdown-active");
         });
 	}
 
@@ -69,6 +69,13 @@ $(document).ready(function() {
 		$('.close-modal, .simplemodal-overlay').live('click', function(){
 			$.modal.close();
 		});
+		// Don't let opacity be set by the plugin
+		$.modal.defaults.opacity = 'inherit';
+		// Add a class to overlay and container when the modal is shown
+		$.modal.defaults.onShow = function(){
+			$('.simplemodal-overlay').addClass('overlay-active');
+			$('.simplemodal-container').addClass('modal-active');
+		}
 	}
 
   	initClassFixing();

@@ -5,3 +5,4 @@
 .sass-cache/*.scssc
 *.scssc
 _src/.DS_store
+_includes/.DS_store
