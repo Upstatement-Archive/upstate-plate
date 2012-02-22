@@ -7,12 +7,12 @@
 			Delete a section if you don't need it */
 		
 		$style_tabs = array();
-		$style_tabs[] = array('title' => 'Type', 'file' => '_includes/style-type.php');
-		$style_tabs[] = array('title' => 'Objects', 'file' => '_includes/style-objects.php');
-		$style_tabs[] = array('title' => 'Forms', 'file' => '_includes/style-forms.php');
- 		$style_tabs[] = array('title' => 'Tables', 'file' => '_includes/style-tables.php');
-/* 		$style_tabs[] = array('title' => 'Layout', 'file' => '_includes/style-layout.php'); */
-/* 		$style_tabs[] = array('title' => 'Color', 'file' => '_includes/style-color.php'); */
+		$style_tabs[] = array('title' => 'Type', 'file' => '_includes/_style/type.php');
+		$style_tabs[] = array('title' => 'Objects', 'file' => '_includes/_style/objects.php');
+		$style_tabs[] = array('title' => 'Forms', 'file' => '_includes/_style/forms.php');
+ 		$style_tabs[] = array('title' => 'Tables', 'file' => '_includes/_style/tables.php');
+/* 		$style_tabs[] = array('title' => 'Layout', 'file' => '_includes/_style/layout.php'); */
+/* 		$style_tabs[] = array('title' => 'Color', 'file' => '_includes/_style/color.php'); */
 	
 	?>
 
