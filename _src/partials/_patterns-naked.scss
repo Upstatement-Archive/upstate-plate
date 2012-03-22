@@ -429,7 +429,7 @@ $style-dark: "dk", "dark";
 
 /* !Universal Dropdown Styles */
 
-.dropdown-container {
+.dropdown {
 	position: relative;
 	@include pie-clearfix;
 	overflow: hidden;
@@ -866,38 +866,6 @@ $sidesaddle-width: 130px; //Default width for sidesaddle labels
 	} // end sidesaddle
 
 	
-// Mixin used to create any form size
-@mixin form($form-size) {
-	@extend .form-basic;
-
-	// Define form sizes & definitions
-	@if $form-size == "s" or $form-size == "small" {
-		@include form-size-small;
-		}
-	@if $form-size == "m" or $form-size == "med" or $form-size == "medium" or $form-size == "reg" {
-		@include form-size-med;
-		}
-	@if $form-size == "l" or $form-size == "large" {
-		@include form-size-large;
-		}
-		
-	} // end form
-
-
-// Classes for various form sizes
-.form-s, .form-small {
-	@include form(small);
-	}
-
-.form, .form-m, .form-med {
-	@include form(med);
-	}
-
-.form-l, .form-large {
-	@include form(large);
-	}			
-
-
 /* !-- Universal Form Styles ----------------------------------- */
 
 .form-basic {
@@ -1004,6 +972,43 @@ input[type=checkbox], input[type=radio] {
 ::-webkit-input-placeholder {
 	color: #bfbfbf;
 	}
+
+
+/* !-- Form Sizes ----------------------------------- */
+
+// Reference the form mixins above .form-basic
+
+// Mixin used to create any form size
+@mixin form($form-size) {
+	@extend .form-basic;
+
+	// Define form sizes & definitions
+	@if $form-size == "s" or $form-size == "small" {
+		@include form-size-small;
+		}
+	@if $form-size == "m" or $form-size == "med" or $form-size == "medium" or $form-size == "reg" {
+		@include form-size-med;
+		}
+	@if $form-size == "l" or $form-size == "large" {
+		@include form-size-large;
+		}
+		
+	} // end form
+
+
+// Classes for various form sizes
+.form-s, .form-small {
+	@include form(small);
+	}
+
+.form, .form-m, .form-med {
+	@include form(med);
+	}
+
+.form-l, .form-large {
+	@include form(large);
+	}			
+
 	
 
 /* !-- Form States ----------------------------------- */

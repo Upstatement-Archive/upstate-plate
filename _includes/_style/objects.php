@@ -128,16 +128,18 @@
 	<label class="style-node-h">Dropdown - On Hover</label>
 	<div class="style-example">
 		<div class="dropdown">								 
-			<a class="dropdown-trigger-hover">Dropdown Hover</a>
-			<ul class="dropdown-menu">
-				<li><a href="#">Drop Item 1</a></li>
-				<li><a href="#">Drop Item 2</a></li>
-				<li><a href="#">Drop Item 3</a></li>
-				<li><a href="#">Drop Item 4</a></li>
-				<li><a href="#">Drop Item 5</a></li>
-				<li><a href="#">Drop Item 6</a></li>
-				<li><a href="#">Drop Item 7</a></li>
-			</ul> <!-- /.dropdown-menu -->			
+			<div class="dropdown-trigger-hover"
+				<a class="dropdown-trigger-link">Dropdown Hover</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Drop Item 1</a></li>
+					<li><a href="#">Drop Item 2</a></li>
+					<li><a href="#">Drop Item 3</a></li>
+					<li><a href="#">Drop Item 4</a></li>
+					<li><a href="#">Drop Item 5</a></li>
+					<li><a href="#">Drop Item 6</a></li>
+					<li><a href="#">Drop Item 7</a></li>
+				</ul> <!-- /.dropdown-menu -->
+			</div> <!-- /.dropdown-trigger-hover -->			
 		</div> <!-- /.dropdown-container -->
 	</div> <!-- style example -->
 	<div class="style-meta-container">

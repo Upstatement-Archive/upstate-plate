@@ -33,18 +33,16 @@ $(document).ready(function() {
 	
 	function initDropDowns(){
 		// Set dropdowns on click
-		$(".dropdown-trigger").toggle(function() {
-			$(this).parent(".dropdown").addClass("dropdown-active");
-		}, function() {
-			$(this).parent(".dropdown").removeClass("dropdown-active");
+		$(document.body).delegate(".dropdown-trigger", "click", function() {
+			var t = $(this).closest(".dropdown");
+			t.toggleClass("dropdown-active");
 		});
-
+		
 		// Set dropdowns on hover
-		$(".dropdown-trigger-hover").hover(function() {
-            $(this).parent(".dropdown").addClass("dropdown-active");
-        }, function() {
-            $(this).parent(".dropdown").removeClass("dropdown-active");
-        });
+		$(document.body).delegate(".dropdown-trigger-hover", "mouseenter mouseleave", function() {
+			var t = $(this).closest(".dropdown");
+			t.toggleClass("dropdown-active");
+		});
 	}
 
 	function initToolTips(){
