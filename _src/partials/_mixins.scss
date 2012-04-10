@@ -14,7 +14,7 @@ $context: 960 !default;
 	@return #{($px/$doc)}em;	
 	}
 
-@mixin trans($trans-time: .2s,$trans-property: ease-in, $trans-function: all) {
+@mixin trans($trans-time: .2s, $trans-property: all, $trans-function: ease-in) {
 	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
 	}
 
@@ -31,6 +31,34 @@ $context: 960 !default;
 	&:after {
 		display: initial;
 		clear: none;
+		}
+	}
+
+@mixin triangle($tri-orientation: down, $tri-width: 3px, $tri-color: #666) {
+	@include rotate(.1deg);
+	
+	@if $tri-orientation == "up" or $tri-orientation == "top" {
+		border-left: $tri-width solid transparent;
+		border-right: $tri-width solid transparent;
+		border-bottom: $tri-width solid $tri-color;
+		}
+
+	@if $tri-orientation == "down" or $tri-orientation == "bottom" {
+		border-left: $tri-width solid transparent;
+		border-right: $tri-width solid transparent;
+		border-top: $tri-width solid $tri-color;
+		}
+
+	@if $tri-orientation == "left" {
+		border-top: $tri-width solid transparent;
+		border-bottom: $tri-width solid transparent;
+		border-right: $tri-width solid $tri-color;
+		}
+
+	@if $tri-orientation == "right" {
+		border-top: $tri-width solid transparent;
+		border-bottom: $tri-width solid transparent;
+		border-left: $tri-width solid $tri-color;
 		}
 	}
 
