@@ -967,7 +967,6 @@ button {
   -webkit-transition-timing-function: ease-in;
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  visibility: hidden;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   position: absolute;
@@ -977,7 +976,9 @@ button {
 .dropdown-active .dropdown-menu {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
-  visibility: visible;
+}
+.dropdown-active.dropdown {
+  overflow: visible;
 }
 
 /* !-- Tooltips ----------------------------------- */

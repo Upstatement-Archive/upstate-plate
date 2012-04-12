@@ -462,17 +462,19 @@ $style-dark: "dk", "dark";
 
 .dropdown-menu {
 	@include trans(.2s, opacity, ease-in);
-	visibility: hidden;
 	@include opacity(0);
 	position: absolute;
 	z-index: 100;
 	}
 
-.dropdown-active .dropdown-menu {
-	@include opacity(1);
-	visibility: visible;
-	}
-	
+.dropdown-active {
+	.dropdown-menu {
+		@include opacity(1);
+		}
+	&.dropdown {
+		overflow: visible;
+		}
+	}	
 
 
 /* !-- Tooltips ----------------------------------- */

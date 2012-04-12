@@ -128,7 +128,7 @@
 	<label class="style-node-h">Dropdown - On Hover</label>
 	<div class="style-example">
 		<div class="dropdown">								 
-			<div class="dropdown-trigger-hover"
+			<div class="dropdown-trigger-hover">
 				<a class="dropdown-trigger-link">Dropdown Hover</a>
 				<ul class="dropdown-menu">
 					<li><a href="#">Drop Item 1</a></li>
