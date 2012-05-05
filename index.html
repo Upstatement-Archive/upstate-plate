@@ -16,7 +16,14 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="_css/screen.css?v=2">
-  <script src="/_js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- Do you want IE to work? -->
+  <script type="text/javascript" src="_js/libs/ieshiv.js"></script>
+  <!--[if IE 8 ]>
+	<script type="text/javascript" src="_js/libs/respond.js"></script>
+  <![endif]-->
+  
+  <script type="text/javascript" src="_js/libs/modernizr-2.0.6.min.js"></script>
   
   
 
@@ -37,7 +44,8 @@
   </div> <!-- eo #container -->
 
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="_js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
 	<!-- Masonry by Desandro -->
 	<!--<script type="text/javascript" src="/_js/libs/jquery.masonry.min.js"></script>-->
