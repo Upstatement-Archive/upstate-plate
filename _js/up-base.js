@@ -88,12 +88,14 @@ $(document).ready(function() {
 		$('.close-modal, .simplemodal-overlay').live('click', function(){
 			$.modal.close();
 		});
-		// Don't let opacity be set by the plugin
-		$.modal.defaults.opacity = 'inherit';
-		// Add a class to overlay and container when the modal is shown
-		$.modal.defaults.onShow = function(){
-			$('.simplemodal-overlay').addClass('overlay-active');
-			$('.simplemodal-container').addClass('modal-active');
+		if ($.modal){
+			// Don't let opacity be set by the plugin
+			$.modal.defaults.opacity = 'inherit';
+			// Add a class to overlay and container when the modal is shown
+			$.modal.defaults.onShow = function(){
+				$('.simplemodal-overlay').addClass('overlay-active');
+				$('.simplemodal-container').addClass('modal-active');
+			}
 		}
 	}
 

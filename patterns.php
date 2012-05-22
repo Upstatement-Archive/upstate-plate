@@ -85,9 +85,9 @@
   <!-- scripts concatenated and minified via ant build script-->
   <script src="_js/plugins.js"></script>
   <script type="text/javascript" src="/_js/libs/prettify.js"></script>
-  <script type="text/javascript" language="javascript" src="_js/mylibs/style-guide.js"></script>
+  <script type="text/javascript" language="javascript" src="_js/libs/style-guide.js"></script>
   <script src="_js/script.js"></script>
-  <script src="_js/mylibs/up-base.js"></script>
+  <script src="_js/up-base.js"></script>
   <!-- end scripts-->
 
 
