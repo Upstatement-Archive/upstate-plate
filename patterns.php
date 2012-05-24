@@ -74,20 +74,18 @@
 	</div> <!-- panes -->
 
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="_js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script type="text/javascript" src="_js/libs/jquery-1.7.2.min.js"></script>
 
-  <script src="_js/libs/jquery.tools.min.js"></script>  
+  <script type="text/javascript" src="_js/libs/jquery.tools.min.js"></script>  
 
   <!-- Modals: Do you enjoy modals? Yes you do -->
   <script type="text/javascript" src="_js/libs/jquery.simplemodal.1.4.2.min.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
-  <script src="_js/plugins.js"></script>
-  <script type="text/javascript" src="/_js/libs/prettify.js"></script>
-  <script type="text/javascript" language="javascript" src="_js/libs/style-guide.js"></script>
-  <script src="_js/script.js"></script>
-  <script src="_js/up-base.js"></script>
+  <script type="text/javascript" src="_js/libs/prettify.js"></script>
+  <script type="text/javascript" src="_js/libs/style-guide.js"></script>
+  <script type="text/javascript" src="_js/script.js"></script>
+  <script type="text/javascript" src="_js/up-base.js"></script>
   <!-- end scripts-->
 
 
