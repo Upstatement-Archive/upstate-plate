@@ -36,9 +36,9 @@
 <li class="style-node style-node-btn">
 	<label class="style-node-h">Button - Dark</label>
 	<div class="style-example">
-	<a href="#" class="btn-small-dark">Small Black</a>
-	<a href="#" class="btn-dark">Regular Black</a>
-	<a href="#" class="btn-large-dark">Large Black</a>
+	<a href="#" class="btn-small-dark">Small Dark</a>
+	<a href="#" class="btn-dark">Regular Dark</a>
+	<a href="#" class="btn-large-dark">Large Dark</a>
 	</div> <!-- style example -->
 	<div class="style-meta-container">
 		<dl class="style-meta">
