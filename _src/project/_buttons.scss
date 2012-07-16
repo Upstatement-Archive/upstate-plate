@@ -4,34 +4,45 @@
 
 /* ---------------------------------------------- */
 
-// Universal Button Vars
-$btn-size: med !default;
-$btn-style: light !default;
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Button Defaults
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-// Universal Button Sizes	
-@mixin btn-size-small {
-	font-size: 11px;
-	padding: 4px 11px 5px;		
-	}
+// Set default classes based on style
 
-@mixin btn-size-med {
-	font-size: 13px;
-	padding: 5px 14px 6px;	
-	}
+.btn, .btn-med, .btn-light {
+	@extend .btn-med-light;
+}
 
-@mixin btn-size-large {
-	font-size: 14px;
-	padding: 7px 16px 8px;		
-	}
+.btn-small {
+	@extend .btn-small-light;
+}
 
+.btn-large {
+	@extend .btn-large-light;
+}
+
+.btn-dark {
+	@extend .btn-med-dark;
+}
+
+.btn-alt {
+	@extend .btn-med-alt;
+}
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // Universal Button Styles
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 @mixin btn-basic($btn-size) {
-	@include trans;
+	text-align: center;
 	display: inline-block;
 	line-height: normal;
 	border: 1px solid #ccc;
 	@include border-radius(4px);
 	@include box-shadow(rgba(255, 255, 255, 0.2) 0 1px 0 inset, rgba(0, 0, 0, 0.05) 0 1px 2px);
+	@include trans;
 	
 	&:hover {
 		cursor: pointer;
@@ -42,7 +53,11 @@ $btn-style: light !default;
 		}
 	}
 
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // Specific Button Styles
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 @mixin btn-light {
 	color: #333;
 	border-bottom-color: #bbb;
@@ -62,10 +77,6 @@ $btn-style: light !default;
 		}	
 	}
 
-@mixin btn-reg {
-
-	}
-
 @mixin btn-dark {
 	color: #fff;
 	border-color: #0064cd #0064cd #003f81;
@@ -76,6 +87,40 @@ $btn-style: light !default;
 	@include text-shadow(rgba(0, 0, 0, 0.25) 0 -1px 0);
 	}
 
+@mixin btn-alt {
+	// If you have a third button style
+	// You can put the code here, ya' hear?
+	}
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Universal Button Sizes
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	
+@mixin btn-size-small {
+	font-size: 11px;
+	padding: 4px 11px 5px;		
+	}
+
+@mixin btn-size-med {
+	font-size: 13px;
+	padding: 5px 14px 6px;	
+	}
+
+@mixin btn-size-large {
+	font-size: 14px;
+	padding: 7px 16px 8px;		
+	}
+
+
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Button Mixin
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Mixin variable defaults
+$btn-size: med !default;
+$btn-style: light !default;
 
 // Mixin used to create any combination of button sizes and styles
 @mixin btn($btn-size, $btn-style) {
@@ -103,20 +148,15 @@ $btn-style: light !default;
 	} // end btn
 
 
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Button Class Generator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 // Automagically output every combination of button style and size
 
 $size-defaults: small, med, large;
-$style-defaults: light, dark, alt, blk;
-
-$btn-alias: ".btn", ".button";
-
-$size-small: "s", "small"; 
-$size-med: "m", "med"; 
-$size-large: "l", "large";
-
-$style-light: "lt", "light";
-$style-dark: "dk", "dark";
-$style-alt: "bl", "blue";
+$style-defaults: light, dark, alt;
 
 @each $size in $size-defaults {
 	@each $style in $style-defaults {
@@ -124,14 +164,4 @@ $style-alt: "bl", "blue";
 		@include btn($size, $style);
 		}
 	}
-}
-
-// Set defaults for simple extending
-
-.btn-dark {
-	@extend .btn-med-dark;
-}
-
-.btn, .btn-lt {
-	@extend .btn-med-lt;
 }

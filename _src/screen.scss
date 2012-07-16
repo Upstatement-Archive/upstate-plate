@@ -1,24 +1,18 @@
 /* ## Bring in all Compass Helpers */ 
 @import "partials/base";
 
-/* ## Core variables and mixins */
-@import "project/variables";
-@import "partials/mixins";
-@import "partials/layout";
-// @import "partials/upstatement"; 
- 
 /* ## Base CSS */
-// @import "partials/type";
-// @import "partials/forms";
-// @import "partials/tables";
-// @import "partials/lists";
+// @import "project/type";
+// @import "project/forms";
+// @import "project/tables";
+// @import "project/lists";
 
 /* ## Components */
-// @import "partials/dropdowns";
-// @import "partials/buttons";
-// @import "partials/tabs";
-// @import "partials/modals";
-// @import "partials/tooltips";
+// @import "project/buttons";
+// @import "project/dropdowns";
+// @import "project/tabs";
+// @import "project/modals";
+// @import "project/tooltips";
 
 
   
@@ -45,7 +39,7 @@ em   	{	font-style: italic;	}
 /* ============================================= */
 
 // Import Print Styles
-@import "partials/print";
+@import "project/print";
 
 
 

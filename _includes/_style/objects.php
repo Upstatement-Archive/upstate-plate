@@ -1,24 +1,12 @@
 <div class="style-container objects style-pane">
 <ul>
 
-<li class="style-node">
-	<label class="style-node-h">Button - Small</label>
+<li class="style-node style-node-btn">
+	<label class="style-node-h">Button - Default</label>
 	<div class="style-example">
-	<a href="#" class="btn-small">Button example</a>
-	</div> <!-- style example -->
-	<div class="style-meta-container">
-		<dl class="style-meta">
-			<dt>Selector</dt>
-			<dd>.btn-s, .btn-small</dd>
-			<?php echo $code_snip ?>
-		</dl> 
-	</div> <!-- style-meta -->	
-</li>
-
-<li class="style-node">
-	<label class="style-node-h">Button</label>
-	<div class="style-example">
-	<a href="#" class="btn">Button example</a>
+	<a href="#" class="btn-small">Small Button</a>
+	<a href="#" class="btn">Regular Button</a>
+	<a href="#" class="btn-large">Large Button</a>
 	</div> <!-- style example -->
 	<div class="style-meta-container">
 		<dl class="style-meta">
@@ -29,62 +17,53 @@
 	</div> <!-- style-meta -->	
 </li>
 
-<li class="style-node">
-	<label class="style-node-h">Button - Large</label>
+<li class="style-node style-node-btn">
+	<label class="style-node-h">Button - Light</label>
 	<div class="style-example">
-	<a href="#" class="btn-large">Button example</a>
+	<a href="#" class="btn-small-light">Small Light</a>
+	<a href="#" class="btn-light">Regular Light</a>
+	<a href="#" class="btn-large-light">Large Light</a>
 	</div> <!-- style example -->
 	<div class="style-meta-container">
 		<dl class="style-meta">
 			<dt>Selector</dt>
-			<dd>.btn-l, .btn-large</dd>
+			<dd>.btn-light</dd>
 			<?php echo $code_snip ?>
 		</dl> 
 	</div> <!-- style-meta -->	
 </li>
 
-<li class="style-node">
-	<label class="style-node-h">Button - Dark Small</label>
-	<div class="style-example">
-	<a href="#" class="btn-dark-small">Button example</a>
-	</div> <!-- style example -->
-	<div class="style-meta-container">
-		<dl class="style-meta">
-			<dt>Selector</dt>
-			<dd>.btn-dk-s, .btn-dark-small</dd>
-			<?php echo $code_snip ?>
-		</dl> 
-	</div> <!-- style-meta -->	
-</li>
-
-<li class="style-node">
+<li class="style-node style-node-btn">
 	<label class="style-node-h">Button - Dark</label>
 	<div class="style-example">
-	<a href="#" class="btn-dark">Button example</a>
+	<a href="#" class="btn-small-dark">Small Black</a>
+	<a href="#" class="btn-dark">Regular Black</a>
+	<a href="#" class="btn-large-dark">Large Black</a>
 	</div> <!-- style example -->
 	<div class="style-meta-container">
 		<dl class="style-meta">
 			<dt>Selector</dt>
-			<dd>.btn-dk, .btn-dark</dd>
+			<dd>.btn-dark</dd>
 			<?php echo $code_snip ?>
 		</dl> 
 	</div> <!-- style-meta -->	
 </li>
 
-<li class="style-node">
-	<label class="style-node-h">Button - Dark Large</label>
+<li class="style-node style-node-btn">
+	<label class="style-node-h">Button - Alt</label>
 	<div class="style-example">
-	<a href="#" class="btn-dark-large">Button example</a>
+	<a href="#" class="btn-small-alt">Small Alt</a>
+	<a href="#" class="btn-alt">Regular Alt</a>
+	<a href="#" class="btn-large-alt">Large Alt</a>
 	</div> <!-- style example -->
 	<div class="style-meta-container">
 		<dl class="style-meta">
 			<dt>Selector</dt>
-			<dd>.btn-dk-l, .btn-dark-large</dd>
+			<dd>.btn-alt</dd>
 			<?php echo $code_snip ?>
 		</dl> 
 	</div> <!-- style-meta -->	
 </li>
-
 
 <li class="style-node">
 	<label class="style-node-h">Tabs</label>

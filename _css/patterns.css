@@ -521,6 +521,18 @@ dl, dt, dd {
   border-bottom: none;
 }
 
+.style-node-btn a[class*="btn"] {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 200px;
+}
+.style-node-btn a[class*="btn-small"] {
+  max-width: 130px;
+}
+.style-node-btn a[class*="btn-large"] {
+  max-width: 270px;
+}
+
 /* Code
 ================================== */
 .style-meta .code-snip {

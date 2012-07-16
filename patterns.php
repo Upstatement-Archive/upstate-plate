@@ -34,7 +34,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <link rel="stylesheet" href="/_css/screen.css?v=2">
-  <link rel="stylesheet" href="/_css/style-guide.css" media="screen"/>  
+  <link rel="stylesheet" href="/_css/patterns.css" media="screen"/>  
   <script type="text/javascript" src="_js/libs/modernizr-2.0.6.min.js"></script>
 
 	<?php 
