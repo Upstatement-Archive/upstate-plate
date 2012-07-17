@@ -321,7 +321,7 @@ button {
 /* !== Transitions ==================================== */
 /* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
-  background: url('../_img/sprite-s98ed23216c.png') no-repeat;
+  background: url('../_img/sprite-scc1f2af80b.png') no-repeat;
 }
 
 .sprite-edit-off {
@@ -330,6 +330,7 @@ button {
   width: 1px;
 }
 
+/* !== Retina Sprites ==================================== */
 /* !== Paul Irish HTML5 Helpers =================== */
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
@@ -519,6 +520,18 @@ dl, dt, dd {
 
 .style-meta dd:last-child {
   border-bottom: none;
+}
+
+.style-node-btn a[class*="btn"] {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 200px;
+}
+.style-node-btn a[class*="btn-small"] {
+  max-width: 130px;
+}
+.style-node-btn a[class*="btn-large"] {
+  max-width: 270px;
 }
 
 /* Code

@@ -160,6 +160,19 @@ dl, dt, dd {
 	border-bottom: none;
 	}
 
+.style-node-btn {
+	a[class*="btn"] {
+		display: block;
+		margin: 0 auto 30px;
+		max-width: 200px;
+	}
+	a[class*="btn-small"] {
+		max-width: 130px;
+	}
+	a[class*="btn-large"] {
+		max-width: 270px;
+	}
+}
 
 /* Code
 ================================== */
