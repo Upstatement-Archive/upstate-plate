@@ -612,7 +612,14 @@ dl, dt, dd {
 .style-meta .code-snip pre .pln:first-child {
   width: 20px;
   height: 14px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+.style-meta .code-snip pre .pln:first-child {
+  *display: inline;
 }
 .style-meta .code-snip li:last-child .pln:first-child {
   width: 0;
