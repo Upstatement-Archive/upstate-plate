@@ -211,7 +211,7 @@ dl, dt, dd {
 		.atv { color: #87ceeb } /* attribute value - pink */
 		.dec { color: #98fb98 } /* decimal         - lightgreen */
 		.pln { color: rgba(255, 255, 255, .35); 
-			&:first-child { width: 20px; height: 14px; display: inline-block;  }
+			&:first-child { width: 20px; height: 14px; @include inline-block;  }
 			}    /* plaintext */
 		}
 	li:last-child .pln:first-child { 

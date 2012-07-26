@@ -37,7 +37,7 @@
 
 @mixin btn-basic($btn-size) {
 	text-align: center;
-	display: inline-block;
+	@include inline-block;
 	line-height: normal;
 	border: 1px solid #ccc;
 	@include border-radius(4px);
