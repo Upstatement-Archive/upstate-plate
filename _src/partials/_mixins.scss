@@ -64,11 +64,12 @@ $context: 960 !default;
 	
 // Pattern for resolving Flash-Of-Unstyled-Type
 @mixin fout {
-	@include opacity(0);
-	@include trans(.1s, opacity);	
+	.wf-loading & {
+		@include opacity(0);
+	}
 
 	.wf-active &,
-	.wf-inactive &, {
+	.wf-inactive & {
 		@include opacity(1);
 	}	
 }
