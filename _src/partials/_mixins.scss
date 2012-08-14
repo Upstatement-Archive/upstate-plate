@@ -61,6 +61,17 @@ $context: 960 !default;
 		border-left: $tri-width solid $tri-color;
 		}
 	}
+	
+// Pattern for resolving Flash-Of-Unstyled-Type
+@mixin fout {
+	@include opacity(0);
+	@include trans(.1s, opacity);	
+
+	.wf-active &,
+	.wf-inactive &, {
+		@include opacity(1);
+	}	
+}
 
 
 /* !== Sprites ==================================== */
