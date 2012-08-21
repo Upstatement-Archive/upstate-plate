@@ -42,8 +42,8 @@
 // Reset styles
 @import "reset";
 
-// Layout modules, column widths, responsive baselines, etc.
-@import "layout";
+// All variables, including Upstatement defaults 
+@import "project/variables";
 
 // Universal Upstatement Mixins
 @import "mixins";
@@ -51,5 +51,5 @@
 // Custom Typefaces, if necessary
 @import "project/fonts";
 
-// All variables, including Upstatement defaults 
-@import "project/variables";
+// Layout modules, column widths, responsive baselines, etc.
+@import "layout";

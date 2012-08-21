@@ -61,16 +61,38 @@ $context: 960 !default;
 		border-left: $tri-width solid $tri-color;
 		}
 	}
+
+// Shortcut for styling placeholder text in forms
+@mixin placeholder($default: inherit, $hover: $default, $focus: $default){
+	// You have to declare these separately in order to work
+	&::-webkit-input-placeholder {
+	    color: $default;
+	}
+	&:-moz-placeholder {
+	    color: $default;
+	}
+	&:hover::-webkit-input-placeholder {
+	    color: $hover;
+	}
+	&:hover:-moz-placeholder {
+	    color: $hover;
+	}
+	&:focus::-webkit-input-placeholder {
+	    color: $focus;
+	}
+	&:focus:-moz-placeholder {
+	    color: $focus;
+	}
+}
 	
 // Pattern for resolving Flash-Of-Unstyled-Type
 @mixin fout {
 	.wf-loading & {
-		@include opacity(0);
+		visibility: hidden;
 	}
-
 	.wf-active &,
 	.wf-inactive & {
-		@include opacity(1);
+		visibility: visible;
 	}	
 }
 

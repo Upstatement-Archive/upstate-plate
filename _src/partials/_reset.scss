@@ -43,8 +43,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 
-// Make sure extra height isnt added to images
-img { line-height: 0; }
+// Make sure extra height isnt added to images: h5bp.com/i/440
+img { line-height: 0; vertical-align: middle; }
 
 nav ul { list-style: none; }
 
@@ -200,3 +200,15 @@ button {  width: auto; overflow: visible; }
 .clearfix:after { clear: both; }
 // Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page
 .clearfix { zoom: 1; }
+
+
+
+// Accessibility
+// ========================================================
+
+// Show this text only for screen-readers, et al.
+.a11y-only {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+}
