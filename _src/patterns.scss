@@ -160,6 +160,19 @@ dl, dt, dd {
 	border-bottom: none;
 	}
 
+.style-node-btn {
+	a[class*="btn"] {
+		display: block;
+		margin: 0 auto 30px;
+		max-width: 200px;
+	}
+	a[class*="btn-small"] {
+		max-width: 130px;
+	}
+	a[class*="btn-large"] {
+		max-width: 270px;
+	}
+}
 
 /* Code
 ================================== */
@@ -198,7 +211,7 @@ dl, dt, dd {
 		.atv { color: #87ceeb } /* attribute value - pink */
 		.dec { color: #98fb98 } /* decimal         - lightgreen */
 		.pln { color: rgba(255, 255, 255, .35); 
-			&:first-child { width: 20px; height: 14px; display: inline-block;  }
+			&:first-child { width: 20px; height: 14px; @include inline-block;  }
 			}    /* plaintext */
 		}
 	li:last-child .pln:first-child { 

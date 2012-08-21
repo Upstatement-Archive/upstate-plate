@@ -321,7 +321,7 @@ button {
 /* !== Transitions ==================================== */
 /* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
-  background: url('../_img/sprite-s98ed23216c.png') no-repeat;
+  background: url('../_img/sprite-scc1f2af80b.png') no-repeat;
 }
 
 .sprite-edit-off {
@@ -330,6 +330,7 @@ button {
   width: 1px;
 }
 
+/* !== Retina Sprites ==================================== */
 /* !== Paul Irish HTML5 Helpers =================== */
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
@@ -347,6 +348,19 @@ button {
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
+/* !============================================= */
+/* ! Custom Fonts					   			  */
+/* !============================================= */
+/* Follow this format, y'hear:
+
+	@font-face { 
+		font-family: "Knockout 32"; 
+		src: font-url('knockout/knockout-32.eot');
+		src: local(':)'), 
+			 font-url('knockout/knockout-32.woff') format('woff'), 
+			 font-url('knockout/knockout-32.ttf') format('truetype'), 
+			 font-url('knockout/knockout-32.svg#webfontABgg4EO0') format('svg'); }	
+*/
 /* !============================================= */
 /* ! Variables						  			  */
 /* !============================================= */
@@ -521,6 +535,18 @@ dl, dt, dd {
   border-bottom: none;
 }
 
+.style-node-btn a[class*="btn"] {
+  display: block;
+  margin: 0 auto 30px;
+  max-width: 200px;
+}
+.style-node-btn a[class*="btn-small"] {
+  max-width: 130px;
+}
+.style-node-btn a[class*="btn-large"] {
+  max-width: 270px;
+}
+
 /* Code
 ================================== */
 .style-meta .code-snip {
@@ -599,7 +625,14 @@ dl, dt, dd {
 .style-meta .code-snip pre .pln:first-child {
   width: 20px;
   height: 14px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
   display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+.style-meta .code-snip pre .pln:first-child {
+  *display: inline;
 }
 .style-meta .code-snip li:last-child .pln:first-child {
   width: 0;

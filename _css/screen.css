@@ -1,17 +1,4 @@
 /* ## Bring in all Compass Helpers */
-/* !============================================= */
-/* ! Custom Fonts					   			  */
-/* !============================================= */
-/* Follow this format, y'hear:
-
-	@font-face { 
-		font-family: "Knockout 32"; 
-		src: font-url('knockout/knockout-32.eot');
-		src: local(':)'), 
-			 font-url('knockout/knockout-32.woff') format('woff'), 
-			 font-url('knockout/knockout-32.ttf') format('truetype'), 
-			 font-url('knockout/knockout-32.svg#webfontABgg4EO0') format('svg'); }	
-*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -113,6 +100,7 @@ input, select {
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small;
+  text-rendering: optimizeLegibility;
 }
 
 select, input, textarea, button {
@@ -333,7 +321,7 @@ button {
 /* !== Transitions ==================================== */
 /* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
-  background: url('../_img/sprite-s98ed23216c.png') no-repeat;
+  background: url('../_img/sprite-scc1f2af80b.png') no-repeat;
 }
 
 .sprite-edit-off {
@@ -342,6 +330,7 @@ button {
   width: 1px;
 }
 
+/* !== Retina Sprites ==================================== */
 /* !== Paul Irish HTML5 Helpers =================== */
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
@@ -360,122 +349,23 @@ button {
 
 /* Hide visually and from screenreaders, but maintain layout */
 /* !============================================= */
+/* ! Custom Fonts					   			  */
+/* !============================================= */
+/* Follow this format, y'hear:
+
+	@font-face { 
+		font-family: "Knockout 32"; 
+		src: font-url('knockout/knockout-32.eot');
+		src: local(':)'), 
+			 font-url('knockout/knockout-32.woff') format('woff'), 
+			 font-url('knockout/knockout-32.ttf') format('truetype'), 
+			 font-url('knockout/knockout-32.svg#webfontABgg4EO0') format('svg'); }	
+*/
+/* !============================================= */
 /* ! Variables						  			  */
 /* !============================================= */
 /* !-- Universal ------------------------------------ */
 /* !-- Project ------------------------------------ */
-/* ## Core variables and mixins */
-/* !============================================= */
-/* ! Variables						  			  */
-/* !============================================= */
-/* !-- Universal ------------------------------------ */
-/* !-- Project ------------------------------------ */
-/* !== Transitions ==================================== */
-/* !== Sprites ==================================== */
-.sprite-sprite, .sprite-edit-off {
-  background: url('../_img/sprite-s98ed23216c.png') no-repeat;
-}
-
-.sprite-edit-off {
-  background-position: 0 0;
-  height: 1px;
-  width: 1px;
-}
-
-/* !== Paul Irish HTML5 Helpers =================== */
-/* Hide for both screenreaders and browsers
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* Hide only visually, but have it available for screenreaders 
-   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-
-/* Hide visually and from screenreaders, but maintain layout */
-/* !============================================= */
-/* ! Universal						   			  */
-/* !============================================= */
-/* Kill the margin on the last column */
-.ui-block:last-child,
-.ui-block.last {
-  margin-right: 0;
-}
-
-/* !============================================= */
-/* ! Grids							   			  */
-/* !============================================= */
-/* Grid-2 vars */
-/* Grid-3 vars */
-/* Grid-3-rrl vars */
-/* Grid-4 vars */
-/* Grid-5 vars */
-/* ! Columns */
-.ui-block-25 {
-  width: 25%;
-}
-
-.ui-block-50 {
-  width: 50%;
-}
-
-.ui-block-75 {
-  width: 75%;
-}
-
-/* !============================================= */
-/* ! Spacers						   			  */
-/* !============================================= */
-/* Variables & Mixins */
-/* Selectors */
-.spacer {
-  margin-bottom: 50px;
-}
-
-.spacer-small {
-  margin-bottom: 10px;
-}
-
-.spacer-med {
-  margin-bottom: 25px;
-}
-
-.spacer-large {
-  margin-bottom: 75px;
-}
-
-/* !============================================= */
-/* ! Image Blocks						   		  */
-/* !============================================= */
-.imageblock-image {
-  float: left;
-  margin: 0 10px 0 0;
-}
-
-.imageblock-image-right {
-  float: right;
-  margin: 0 0 0 10px;
-}
-
-.imageblock-content {
-  display: table-cell;
-  vertical-align: top;
-  width: 1000em;
-}
-
-.ie6 .imageblock-content,
-.ie7 .imageblock-content {
-  display: block;
-  width: auto;
-  zoom: 1;
-}
-
 /* ## Base CSS */
 /* ## Components */
 /* ============================================= */

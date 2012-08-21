@@ -148,7 +148,7 @@ $sidesaddle-width: 130px; //Default width for sidesaddle labels
 		width: $sidesaddle-width;
 		text-align: right;
 		} 
-	// Shift over the inside div to align all label's relevant content
+	// Shift over the inside div to align all labels relevant content
 	.input,
 	.legend-h,
 	.input-prepend,
@@ -158,7 +158,7 @@ $sidesaddle-width: 130px; //Default width for sidesaddle labels
 	.form-actions {
 		padding-left: $sidesaddle-width + 20px; 
 		}
-	} // end sidesaddle
+} // end sidesaddle
 
 	
 /* !-- Universal Form Styles ----------------------------------- */
@@ -172,26 +172,38 @@ $sidesaddle-width: 130px; //Default width for sidesaddle labels
 	// Sidesaddle labels
 	&.sidesaddle {
 		@include sidesaddle;
-		}
+	}
 	
 	.form-row {
 		// Make multiple select elements height not fixed
 		select[multiple] {
 			height: inherit;
 			background-color: #fff;
-			}
-		// Don't fix the height of text areas, either
+		}
+		// Dont fix the height of text areas, either
 		textarea {
 			height: auto;
-			}
 		}
-	} // end form-basic
+	}
+
+	// Input defaults
+	input[type=text],
+	textarea,
+	select,
+	.uneditable-input {
+		display: inline-block;
+		width: 80%;
+		color: #808080;
+		border: 1px solid #ccc;
+		@include border-radius(3px);
+	}
+} // end form-basic
 
 // Spacing for standard fieldset
 fieldset {
 	margin-bottom: 18px;
 	padding-top: 18px;
-	}
+}
 
 // Set spacing below form row
 .form-row {
@@ -205,18 +217,6 @@ fieldset {
 		margin: 0 0 2px 2px;
 		display: block;
 		}
-	}
-
-// Input defaults. 
-input[type=text],
-textarea,
-select,
-.uneditable-input {
-	display: inline-block;
-	width: 80%;
-	color: #808080;
-	border: 1px solid #ccc;
-	@include border-radius(3px);
 	}
 
 // mini reset for non-html5 file types
@@ -251,15 +251,15 @@ select, input[type=file], input.file {
 	}
 
 // Focus states
-input[type=text], textarea {
+.form-basic input[type=text], .form-basic textarea {
 	@include trans(.2s, border, linear);
 	@include box-shadow(rgba(0, 0, 0, 0.1) 0 1px 3px inset);
 	&:focus, &:focus {
 		outline: 0;
 		border-color: rgba(82, 168, 236, 0.8);
 	 	@include box-shadow(rgba(0, 0, 0, 0.1) 0 1px 3px inset, rgba(82, 168, 236, 0.6) 0 0 8px);
-		}
 	}
+}
 input[type=file]:focus, input[type=checkbox]:focus, select:focus {
 	@include box-shadow(none);
 	outline: 1px dotted #666;

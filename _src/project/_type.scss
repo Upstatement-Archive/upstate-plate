@@ -170,7 +170,7 @@
 	@include pie-clearfix;	
 	
 	> li {
-		display: inline-block;
+		@include inline-block;
 		font: bold 10px $sans;
 		text-transform: uppercase;
 		margin-right: 7px;
@@ -188,7 +188,7 @@
 	
 	> li > a {
 		@include trans;
-		display: inline-block;
+		@include inline-block;
 		color: #aaa;
 		&:hover {
 			color: #666;
@@ -223,7 +223,7 @@ $bug-success: #46a546;
 $bug-notice: #62cffc;
 
 .bug {
-	display: inline-block;
+	@include inline-block;
 	padding: 1px 3px 2px;
 	font-size: 9.75px;
 	font-weight: bold;
