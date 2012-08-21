@@ -14,6 +14,10 @@ $context: 960 !default;
 	@return #{($px/$doc)}em;	
 	}
 
+@mixin content($content: \0020) {
+	content: "#{$content}";
+}
+
 @mixin trans($trans-time: .2s, $trans-property: all, $trans-function: ease-in) {
 	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
 	}
