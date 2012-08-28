@@ -113,35 +113,28 @@ $sprite-sprite-dimensions:true;
 @import "sprite/*.png";
 @include all-sprite-sprites;
 
-// Provide a map and var name to use in conjunction with other sprite mixins
-$sprite: sprite-map("sprite/*.png");
-
-
 /* !== Retina Sprites ==================================== */
 
 // UNCOMMENT TO ENABLE RETINA SPRITES
-
 // Place all your retina images in retina folder
 
-//$ret-layout:horizontal;
-//@import "ret/*.png";
-//@include all-ret-sprites; 
-//
-//// Provide a map and var name to use in conjunction with other sprite mixins
-//$retina: sprite-map("retina/*.png");
-//
-//// Set high-resolution icons only on devices with higher pixel density
-//@media	(-webkit-min-device-pixel-ratio: 2), 
-//		(-o-min-device-pixel-ratio: 3/2), 
-//		(min-device-pixel-ratio: 2) {
-//
-//			.sprite-sprite {
-//				// Change background-size to size of your original sprite image
-//			    @include background-size( [XXX] px [XXX] px);
-//			    background-image: $retina;
-//			}
-//			
-//} //mediaquery
+// Make a sprite from all the images in the "_img > retina" folder
+// $retina-layout:horizontal;
+// @import "retina/*.png";
+// @include all-retina-sprites; 
+
+// // Set high-resolution icons only on devices with higher pixel density
+// @media	(-webkit-min-device-pixel-ratio: 2), 
+// 		(-o-min-device-pixel-ratio: 3/2), 
+// 		(min-device-pixel-ratio: 2) {
+
+// 			.sprite-sprite {
+// 				// Change background-size to size of your original sprite image
+// 			    @include background-size( [XX]px [XX]px);
+// 			    background-image: $retina-sprites;
+// 			}
+			
+// } //mediaquery
 
 
 
