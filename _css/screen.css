@@ -101,7 +101,8 @@ input, select {
 body {
   font: 13px/1.231 sans-serif;
   *font-size: small;
-  text-rendering: optimizeLegibility;
+  /*text-rendering: optimizeLegibility;*/
+  /* this causes problems in Chrome for Windows and on iOS */
 }
 
 select, input, textarea, button {
