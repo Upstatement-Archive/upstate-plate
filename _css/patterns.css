@@ -103,6 +103,7 @@ body {
   *font-size: small;
   /*text-rendering: optimizeLegibility;*/
   /* this causes problems in Chrome for Windows and on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 select, input, textarea, button {
