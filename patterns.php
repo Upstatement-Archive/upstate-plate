@@ -49,7 +49,7 @@
 
 	<nav id="style-hdr">
 		<div class="style-hdr-group">		
-			<h1 class="style-page-h">Pattern <span class="thin">Library</thin></h1>
+			<h1 class="style-page-h">Pattern <span class="thin">Library</span></h1>
 			<img class="style-logo" src="_img/upstatement-logo.png" alt="Upstatement" />
 			<ul class="style-tabs clearfix">
 			<?php
