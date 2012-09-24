@@ -4,15 +4,15 @@ $context: 960 !default;
 
 @mixin respw($target, $context){
 	width: percentage($target / $context); 
-	}
+}
 
 @function resp($target, $context){
 	@return percentage($target / $context); 
-	}
+}
 
 @function em($px, $doc:13){
 	@return #{($px/$doc)}em;	
-	}
+}
 
 @mixin content($content: \0020) {
 	content: "#{$content}";

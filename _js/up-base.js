@@ -54,16 +54,25 @@ $(document).ready(function() {
 	
 	function initDropDowns(){
 		// Set dropdowns on click
-		$(document.body).delegate(".dropdown-trigger", "click", function() {
-			var t = $(this).closest(".dropdown");
+		$('html.no-touch').on("click tap", ".dropdown-trigger, .dd-menu-trigger", toggleDropDown);
+		$('html.no-touch').on('mouseenter mouseleave', '.dropdown-trigger-hover, .dd-menu-trigger-hover', toggleDropDown);
+		$('html.touch').on("touchend", ".dropdown-trigger, .dd-menu-trigger, .dropdown-trigger-hover, .dd-menu-trigger-hover", toggleDropDown);
+
+		function toggleDropDown(e){
+			//console.log(e.type);
+			var $this = $(this);
+			var t = $this.closest(".dropdown, .dd-mod");
 			t.toggleClass("dropdown-active");
-		});
-		
-		// Set dropdowns on hover
-		$(document.body).delegate(".dropdown-trigger-hover", "mouseenter mouseleave", function() {
-			var t = $(this).closest(".dropdown");
-			t.toggleClass("dropdown-active");
-		});
+			t.toggleClass("menu-active");
+			if ($('html').hasClass('touch')) {
+				e.preventDefault();
+			}
+			if (!t.length){
+				var target = $this.data('target');
+				var $target = $(target);
+				$target.toggleClass('open');
+			}
+		}
 	}
 
 	function initToolTips(){
