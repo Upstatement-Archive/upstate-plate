@@ -1,47 +1,51 @@
 // usage: log('inside coolFunc', this, arguments);
 // paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
 window.log = function(){
-  log.history = log.history || [];   // store logs to an array for reference
-  log.history.push(arguments);
-  if(this.console) {
-    arguments.callee = arguments.callee.caller;
-    var newarr = [].slice.call(arguments);
-    (typeof console.log === 'object' ? log.apply.call(console.log, console, newarr) : console.log.apply(console, newarr));
-  }
+	log.history = log.history || [];   // store logs to an array for reference
+	log.history.push(arguments);
+  	if(this.console) {
+    	arguments.callee = arguments.callee.caller;
+    	var newarr = [].slice.call(arguments);
+    	(typeof console.log === 'object' ? log.apply.call(console.log, console, newarr) : console.log.apply(console, newarr));
+  	}
 };
 
 // make it safe to use console.log always
 (function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,timeStamp,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();){b[a]=b[a]||c}})((function(){try
 {console.log();return window.console;}catch(err){return window.console={};}})());
 
+var upBase;
 
-// place any jQuery/helper plugins in here, instead of separate, slower script files.
+;(function(){
 
+	function UpBase(){
+		this.init();
+	}
 
+	UpBase.prototype.init = function() {
+		this.initClassFixing();
+  		this.initDropDowns();
+  		this.initToolTips();
+  		this.initModals();
+	};
 
-$(document).ready(function() {
-	// Add objects that should automatically receive a "first" or "last" class
-	
-	function initClassFixing(){
+	UpBase.prototype.initClassFixing = function(){
 		var first_last = new Array('table tr', 'table td', 'dl dt', 'ul li', '.table_container .table_default');
-	
 		for (var i=0; i<first_last.length; i++){
 			var f = first_last[i];
 			$(f+":first-child").addClass("first");
 			$(f+":last-child").addClass("last");
 		}
-	
 		$("table tr:odd").addClass("odd");
 	}
-	
-	function initTabs(){
+
+	UpBase.prototype.initTabs = function(){
 		/* Bind tabbing action from all uls with a class of 'tabs' to all divs
 		/  with a class of '.pane' that share the same container div */
 		try {
 			$("ul.tabs").tabs("> .pane",{
 				current:'active'
 			});	
-		
 			// Bind tabbing action from all uls with a class of 'pills' to all divs
 			// with a class of '.pane' that share the same container div
 			$("ul.pills").tabs("> .pane",{
@@ -51,31 +55,61 @@ $(document).ready(function() {
 			trace('Error loading tabs ' + e);
 		}
 	}
-	
-	function initDropDowns(){
-		// Set dropdowns on click
-		$('html.no-touch').on("click tap", ".dropdown-trigger, .dd-menu-trigger", toggleDropDown);
-		$('html.no-touch').on('mouseenter mouseleave', '.dropdown-trigger-hover, .dd-menu-trigger-hover', toggleDropDown);
-		$('html.touch').on("touchend", ".dropdown-trigger, .dd-menu-trigger, .dropdown-trigger-hover, .dd-menu-trigger-hover", toggleDropDown);
 
-		function toggleDropDown(e){
-			//console.log(e.type);
-			var $this = $(this);
-			var t = $this.closest(".dropdown, .dd-mod");
-			t.toggleClass("dropdown-active");
-			t.toggleClass("menu-active");
+	UpBase.prototype.initDropDowns = function(){
+		// Set dropdowns on click
+		console.log('initDropDowns');
+		$('html').not('.touch').on("click", ".dropdown-trigger, .dd-menu-trigger", toggleDropDown);
+
+		$('html').not('.touch').on('mouseenter', '.dropdown-trigger-hover, .dd-menu-trigger-hover', showDropDown);
+		$('html').not('.touch').on('mouseleave', '.dropdown-trigger-hover, .dd-menu-trigger-hover', hideDropDown);
+		
+		$('html.touch').on("touchend", ".dropdown-trigger, .dd-menu-trigger, .dropdown-trigger-hover, .dd-menu-trigger-hover", toggleDropDown);
+		console.log('assing');
+		$(document).on('click', '.dropdown-active a, .menu-active a', function(){
+				console.log('clicker');
+				var $this = $(this);
+				var $parent = $this.closest('.dropdown-active, .menu-active');
+				$parent.removeClass('open');
+		});
+
+		function getDropDownTarget(e){
 			if ($('html').hasClass('touch')) {
 				e.preventDefault();
 			}
-			if (!t.length){
+			var $this = $(e.target);
+			var $t = $this.closest(".dropdown, .dd-mod");
+			if (!$t.length){
 				var target = $this.data('target');
-				var $target = $(target);
-				$target.toggleClass('open');
+				$t = $(target);
+			}
+			return $t;
+		}
+
+		function showDropDown(e){
+			var t = getDropDownTarget(e);
+			t.addClass('dropdown-active menu-active open');
+		}
+
+		function hideDropDown(e){
+			var t = getDropDownTarget(e);
+			t.removeClass('dropdown-active menu-active open');
+		}
+
+		function toggleDropDown(e){
+			//console.log(e.type);
+			console.log('toggleDropDown');
+			e.stopImmediatePropagation();
+			var targetMaybe = getDropDownTarget(e);
+			if (targetMaybe.is(':visible')){
+				hideDropDown(e);
+			} else {
+				showDropDown(e);
 			}
 		}
 	}
 
-	function initToolTips(){
+	UpBase.prototype.initToolTips = function(){
     	// Show tooltips on hover
 		$(document.body).delegate(".tip-trigger", "mouseenter mouseleave", function() {
 			$(this).toggleClass("tip-active");
@@ -87,7 +121,7 @@ $(document).ready(function() {
   		});
   	}
 
-	function initModals(){
+	UpBase.prototype.initModals = function(){
 		// Apply modal action to anything with ID of "modal"
 		// Launch when user clicks any object with a class of "modal-trigger"
 		$('.modal-trigger').click(function(){
@@ -108,13 +142,11 @@ $(document).ready(function() {
 		}
 	}
 
-  	initClassFixing();
-  	initTabs();
-  	initDropDowns();
-  	initToolTips();
-  	initModals();
-  	
-}); /* end jQuery functions */
+	$(document).ready(function() {
+		upBase = new UpBase();
+	}); /* end jQuery functions */
+
+})();
 
 /* Universal Functions */
 
