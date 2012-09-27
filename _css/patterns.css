@@ -291,9 +291,9 @@ button {
 /* Follow this format, y'hear:
 
 	@font-face { 
-		font-family: "Knockout 32"; 
+		font-family: "Knockout32"; 
 		src: font-url('knockout/knockout-32.eot');
-		src: local(':)'), 
+		src: font-url('knockout/knockout-32?#iefix') format('embedded-opentype'),
 			 font-url('knockout/knockout-32.woff') format('woff'), 
 			 font-url('knockout/knockout-32.ttf') format('truetype'), 
 			 font-url('knockout/knockout-32.svg#webfontABgg4EO0') format('svg'); }	
@@ -384,7 +384,7 @@ button {
 }
 
 #style-hdr {
-  background: #222222 url('../_img/bg-leather.png?1328031863') 50% 50% repeat;
+  background: #222222 url('../_img/bg-leather.png?1328031973') 50% 50% repeat;
   padding: 20px 0;
   position: fixed;
   top: 0;

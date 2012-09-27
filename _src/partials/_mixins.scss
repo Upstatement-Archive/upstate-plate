@@ -124,9 +124,11 @@ $sprite-sprite-dimensions:true;
 // @include all-retina-sprites; 
 
 // // Set high-resolution icons only on devices with higher pixel density
-// @media	(-webkit-min-device-pixel-ratio: 2), 
-// 		(-o-min-device-pixel-ratio: 3/2), 
-// 		(min-device-pixel-ratio: 2) {
+// @media	(min-resolution: 96dpi), /* IE/Windows */
+//		(-webkit-min-device-pixel-ratio: 1.1),
+//		(min--moz-device-pixel-ratio: 3/2),
+//		(-o-min-device-pixel-ratio: 1.1), 
+//		(min-device-pixel-ratio: 1.1) {
 
 // 			.sprite-sprite {
 // 				// Change background-size to size of your original sprite image
