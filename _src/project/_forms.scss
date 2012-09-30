@@ -4,6 +4,16 @@
 
 /* ---------------------------------------------- */
 
+@mixin input-default {
+	border: 0;
+	background-color: transparent;
+	@include box-shadow(none);
+	@include border-radius(0);
+	-webkit-appearance: none;
+	&:focus {
+		outline: 0;
+	}
+}
 
 // Universal Form Vars
 $form-size: med !default;
