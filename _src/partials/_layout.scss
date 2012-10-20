@@ -202,29 +202,29 @@ $margin4-r: 8% !default;
 
 	@include pie-clearfix;
 
-	> .col-1,
-	> .col.first {
+	> .ui-block-1,
+	> .ui-block.first {
 		width: $width4-1 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
 		}
 
-	> .col-2,	
-	> .col.second {
+	> .ui-block-2,	
+	> .ui-block.second {
 		width: $width4-2 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
 		}
 
-	> .col-3,
-	> .col.third {
+	> .ui-block-3,
+	> .ui-block.third {
 		width: $width4-3 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
 		}
 
-	> .col-4,
-	> .col.last {
+	> .ui-block-4,
+	> .ui-block.last {
 		width: $width4-4 - ($margin4-r/4);
 		@include float-left;
 		margin-right: 0;	
@@ -245,36 +245,36 @@ $margin5-r: 8% !default;
 
 	@include pie-clearfix;
 
-	> .col-1,
-	> .col.first {
+	> .ui-block-1,
+	> .ui-block.first {
 		width: $width5-1 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
 		}
 
-	> .col-2,	
-	> .col.second {
+	> .ui-block-2,	
+	> .ui-block.second {
 		width: $width5-2 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
 		}
 
-	> .col-3,
-	> .col.third {
+	> .ui-block-3,
+	> .ui-block.third {
 		width: $width5-3 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
 		}
 
-	> .col-4,
-	> .col.fourth {
+	> .ui-block-4,
+	> .ui-block.fourth {
 		width: $width5-4 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
 		}
 
-	> .col-5,
-	> .col.last {
+	> .ui-block-5,
+	> .ui-block.last {
 		width: $width5-5 - ($margin5-r/5);
 		@include float-left;
 		margin-right: 0;	
@@ -295,7 +295,6 @@ $margin5-r: 8% !default;
 .ui-block-75 {
 	width: 75%;
 	}
-
 
 	
 /* !============================================= */
