@@ -1,11 +1,12 @@
-/* !== Transitions ==================================== */
 
 $context: 960 !default;
 
+//What is this and how does it work?
 @mixin respw($target, $context){
 	width: percentage($target / $context); 
 }
 
+//What is this and how does it work?
 @function resp($target, $context){
 	@return percentage($target / $context); 
 }
@@ -18,10 +19,12 @@ $context: 960 !default;
 	content: "#{$content}";
 }
 
+/* !== Transitions ==================================== */
 @mixin trans($trans-time: .2s, $trans-property: all, $trans-function: ease-in) {
 	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
-	}
+}
 
+//What is this and how does it work?
 @mixin user-select($user-select: none) {
 	-webkit-user-select: #{$user-select};
 	-khtml-user-select: #{$user-select};
@@ -29,8 +32,9 @@ $context: 960 !default;
 	-ms-user-select: #{$user-select};
 	-o-user-select: #{$user-select};
 	user-select: #{$user-select};
-	}
+}
 
+//What is this and how does it work?
 @mixin reset-clearfix {
 	&:after {
 		display: initial;
@@ -38,6 +42,8 @@ $context: 960 !default;
 	}
 }
 
+
+//What is this and how does it work?
 @mixin triangle($tri-orientation: down, $tri-width: 3px, $tri-color: #666, $mult:1) {
 	@include rotate(.1deg);
 	
@@ -159,20 +165,22 @@ $sprite-sprite-dimensions:true;
 	background-repeat: no-repeat; 
 	text-align: left; 
 	direction: ltr; 
-	}
+}
 
 // Hide for both screenreaders and browsers
 //   css-discuss.incutio.com/wiki/Screenreader_Visibility
 @mixin hidden { 
 	display: none; 
-	visibility: hidden; } 
+	visibility: hidden; 
+} 
 
 // Hide only visually, but have it available for screenreaders 
 //   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
 @mixin visuallyhidden { 
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px); }
+	clip: rect(1px, 1px, 1px, 1px); 
+}
 
 // Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638
 .visuallyhidden.focusable:active,
@@ -181,4 +189,4 @@ $sprite-sprite-dimensions:true;
 // Hide visually and from screenreaders, but maintain layout
 @mixin invisible { 
 	visibility: hidden; 
-	}
+}

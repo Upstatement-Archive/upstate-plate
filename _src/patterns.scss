@@ -6,7 +6,7 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 .page-width {
 	min-width: 800px;
 	max-width: 1400px;
-	}
+}
 
 #style-hdr {
 	background: $black-90 image-url('bg-leather.png') 50% 50% repeat; 
@@ -22,13 +22,13 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 		position: relative;
 		margin-top: 6px;
 		width: 120px;
-		}
+	}
 	
 	.style-hdr-group {
 		@extend .page-width;
 		margin: 0 5%;
 		@include pie-clearfix;
-		}
+	}
 
 	.style-page-h {
 		font: bold 20px/120% $sans;
@@ -36,21 +36,21 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 		margin: 10px 30px 0 0;
 		letter-spacing: 0;
 		float: left;
-		}
+	}
 
 	.style-page-h.thin,
 	.style-page-h .thin {
 		font-weight: normal;
-		}
+	}
 
 	.style-tabs {
 		margin-top: 5px;
 		float: left;
-		}
+	}
 	
 	.style-tab {
 		display: inline;
-		}
+	}
 
 	.style-tab > a {
 		@include trans(.2s, color);
@@ -65,8 +65,8 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 		@include border-radius(4px);
 		&:hover {
 			color: #fff;
-			}
 		}
+	}
 
 	.style-tab a.active,
 	.style-tab a.active :hover {
@@ -74,19 +74,19 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 		color: #fff;
 		font-weight: bold;
 		border: none;
-		}
-	} /* end style-hdr */
+	}
+} /* end style-hdr */
 
 .style-body {
 	@extend .page-width;
 	padding: 55px;
 	margin: 80px auto 0;
-	}
+}
 
 .style-container {
 	font-family: $sans;
 	margin: 0 0 40px 0;
-	}
+}
 
 .style-header {
 	background-color: #333;
@@ -96,14 +96,14 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 	margin: 0 0 16px;
 	padding: 6px;
 	text-shadow: 1px 0 0 #000000;
-	}
+}
 	
 .style-node {
 	border-top: 1px solid #CCCCCC;
 	margin: 30px 0 0;
 	padding: 30px 0 0;
 	@include pie-clearfix;
-	}
+}
 
 .style-node .style-node-h {
 	display: block;
@@ -113,7 +113,7 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 	margin: -30px 0 30px 0;
 	padding: 6px;
 	background-color: #ededed;
-	}
+}
 
 .style-example {
 	float: right;
@@ -122,43 +122,43 @@ $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 	width: 58%;
 	&.full {
 		width: 100%;
-		}
 	}
+}
 
 .style-meta-container {
 	float: left;
 	padding: 0 2% 0 1%;
 	border-right: 1px solid #ccc;
 	width: 40%;
-	}
+}
 
 dl, dt, dd {
 	margin: 0;
 	padding: 0;
-	}
+}
 
 .style-color {
 	font: normal 24px/130% Miller,Georgia,Times,Times New Roman,serif;
-	}
+}
 
 .style-meta {
 	padding: 10px 0;
 	font-size: 12px;
-	}
+}
 
 .style-meta dt {
 	font-weight: bold;
-	}
+}
 
 .style-meta dd {
 	margin: 4px 0 12px;
 	padding: 0 0 12px;
 	border-bottom: 1px solid #ccc;
-	}
+}
 
 .style-meta dd:last-child {
 	border-bottom: none;
-	}
+}
 
 .style-node-btn {
 	a[class*="btn"] {
@@ -189,7 +189,7 @@ dl, dt, dd {
 		color:#666;
 		font: normal 12px/130% $mono;
 		border-color: #e5e5e5;
-		}
+	}
 	pre { 
 		display: block; 
 		background-color: #333; 
@@ -212,16 +212,16 @@ dl, dt, dd {
 		.dec { color: #98fb98 } /* decimal         - lightgreen */
 		.pln { color: rgba(255, 255, 255, .35); 
 			&:first-child { width: 20px; height: 14px; @include inline-block;  }
-			}    /* plaintext */
-		}
+		}    /* plaintext */
+	}
 	li:last-child .pln:first-child { 
 		width: 0; 
 		margin-top: 4px; }
 
 	.highlight {
 		color: rgba(179, 45, 71, 1.0);
-		}
-	} /* end .style-meta .code-snip */ 
+	}
+} /* end .style-meta .code-snip */ 
 
 
 /* Specify class=linenums on a pre to get line numbering */
@@ -229,8 +229,8 @@ ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents vi
 @for $i from 0 through 50 {
 	li.L#{$i} {
 		list-style-type: none;
-		}
-	}	
+	}
+}	
 /* Alternate shading for lines */
 li.L1,li.L3,li.L5,li.L7,li.L9 { }
 

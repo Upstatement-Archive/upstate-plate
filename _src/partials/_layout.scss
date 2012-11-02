@@ -10,7 +10,7 @@
 .ui-block:last-child,
 .ui-block.last {
 	margin-right: 0;
-	}
+}
 
 
 
@@ -70,7 +70,7 @@
 	
 	
 	
-	}
+}
 
 /* Grid-2 vars */
 
@@ -86,15 +86,15 @@ $margin-r: 5% !default;
 		width: $width-1 - ($margin-r/2);
 		@include float-left;
 		margin-right: $margin-r;
-		}
+	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
 		width: $width-2 - ($margin-r/2);
 		@include float-left;
 		margin-right: 0;
-		}
 	}
+}
 
 @mixin ui-grid-rl($width-1,$width-2,$margin-r) {
 	@include pie-clearfix;
@@ -103,15 +103,15 @@ $margin-r: 5% !default;
 	> .ui-block.first {
 		width: $width-1 - ($margin-r/2);
 		@include float-right;
-		}
+	}
 	
 	> .ui-block-2,
 	> .ui-block.second {
 		width: $width-2 - ($margin-r/2);
 		@include float-left;
 		margin-right: 0;
-		}
 	}
+}
 
 @mixin ui-grid-lr($width-1,$width-2,$margin-r) {
 	@include pie-clearfix;
@@ -120,15 +120,15 @@ $margin-r: 5% !default;
 	> .ui-block.first {
 		width: $width-1 - ($margin-r/2);
 		@include float-left;
-		}
+	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
 		width: $width-2 - ($margin-r/2);
 		@include float-right;
 		margin-right: 0;
-		}
 	}
+}
 
 /* Grid-3 vars */
 
@@ -145,22 +145,22 @@ $margin3-r: 3.5% !default;
 		width: $width3-1 - ($margin3-r/3);
 		@include float-left;
 		margin-right: $margin3-r/2;
-		}
+	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
 		width: $width3-2 - ($margin3-r/3);
 		@include float-left;
 		margin-right: $margin3-r/2;
-		}
+	}
 
 	> .ui-block-3,
 	> .ui-block.last {
 		width: $width3-3 - ($margin3-r/3);
 		@include float-left;
 		margin-right: 0;		
-		}
 	}
+}
 
 /* Grid-3-rrl vars */
 	
@@ -172,22 +172,22 @@ $margin3-r: 3.5% !default;
 		width: $width3-1 - ($margin3-r/3);
 		@include float-right;
 		margin-right: 0;
-		}
+	}
 
 	> .ui-block-2,
 	> .ui-block.second {
 		width: $width3-2 - ($margin3-r/3);
 		@include float-right;
 		margin-right: $margin3-r/2;
-		}
+	}
 
 	> .ui-block-3,
 	> .ui-block.last {
 		width: $width3-3 - ($margin3-r/3);
 		@include float-left;
 		margin-right: $margin3-r/2;		
-		}
 	}
+}
 
 
 /* Grid-4 vars */
@@ -207,29 +207,29 @@ $margin4-r: 8% !default;
 		width: $width4-1 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
-		}
+	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
 		width: $width4-2 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
-		}
+	}
 
 	> .ui-block-3,
 	> .ui-block.third {
 		width: $width4-3 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
-		}
+	}
 
 	> .ui-block-4,
 	> .ui-block.last {
 		width: $width4-4 - ($margin4-r/4);
 		@include float-left;
 		margin-right: 0;	
-		}
 	}
+}
 
 
 /* Grid-5 vars */
@@ -250,51 +250,51 @@ $margin5-r: 8% !default;
 		width: $width5-1 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
-		}
+	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
 		width: $width5-2 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
-		}
+	}
 
 	> .ui-block-3,
 	> .ui-block.third {
 		width: $width5-3 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
-		}
+	}
 
 	> .ui-block-4,
 	> .ui-block.fourth {
 		width: $width5-4 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
-		}
+	}
 
 	> .ui-block-5,
 	> .ui-block.last {
 		width: $width5-5 - ($margin5-r/5);
 		@include float-left;
 		margin-right: 0;	
-		}
 	}
+}
 
 
 /* ! Columns */
 
 .ui-block-25 {
 	width: 25%;
-	}
+}
 
 .ui-block-50 {
 	width: 50%;
-	}
+}
 
 .ui-block-75 {
 	width: 75%;
-	}
+}
 
 	
 /* !============================================= */
@@ -317,26 +317,26 @@ $spacer-bottom: inherit !default;
 @mixin spacer($spacer-top, $spacer-bottom) {
 	margin-top: $spacer-top;
 	margin-bottom: $spacer-bottom;
-	}
+}
 
 
 /* Selectors */
 
 .spacer {
 	margin-bottom: $spacer;
-	}
+}
 
 .spacer-small {
 	margin-bottom: $spacer-small;
-	}
+}
 
 .spacer-med {
 	margin-bottom: $spacer-med;
-	}
+}
 
 .spacer-large {
 	margin-bottom: $spacer-large;
-	}
+}
 	
 	
 /* !============================================= */
@@ -347,27 +347,27 @@ $spacer-bottom: inherit !default;
 
 .imageblock {
 	@extend clearfix;
-	}
+}
 
 .imageblock-image {
 	float: left;
 	margin: 0 10px 0 0;	
-	}
+}
 
 .imageblock-image-right {
 	float: right;
 	margin: 0 0 0 10px;
-	}
+}
 
 .imageblock-content {
 	display: table-cell;
 	vertical-align: top;
 	width: 1000em;
-	}
+}
 	
 .ie6 .imageblock-content,
 .ie7 .imageblock-content {
 	display: block;
 	width: auto;
 	zoom: 1;
-	}
+}

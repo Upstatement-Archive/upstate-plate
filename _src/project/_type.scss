@@ -13,12 +13,12 @@
 	color: $link;
 	&:hover {
 		color: darken($link, 10%);
-		}
 	}
+}
 
 .default-link {
 	@include default-link;
-	}
+}
 
 
 /* !-- Headlines/Headers ------------------------ */
@@ -29,16 +29,16 @@
 	> a {
 		// Direct descendent links will share master style  
 		@include unstyled-link;
-		}
 	}
+}
 
 .page-h2 {
 	font: normal 21px/100% $sans;	
 	> a {
 		// Direct descendent links will share master style  
 		@include unstyled-link;
-		}
 	}
+}
 
 .section-h1 {
 	font: bold 16px/100% $sans;
@@ -50,9 +50,9 @@
 		@include unstyled-link;
 		&:hover {
 			text-decoration: underline;
-			}
 		}
 	}
+}
 
 .section-h2 {
 	font: bold 12px/100% $sans;
@@ -64,9 +64,9 @@
 		@include unstyled-link;
 		&:hover {
 			text-decoration: underline;
-			}
-		}	
-	}
+		}
+	}	
+}
 
 
 /* !-- Text ----------------------------------- */
@@ -81,8 +81,8 @@
 	> a,
 	> p > a {
 		@include default-link;		
-		}
 	}
+}
 
 @mixin text {
 	font: normal 13px/150% $serif;
@@ -92,8 +92,8 @@
 	> a,
 	> p > a {
 		@include default-link;		
-		}
 	}
+}
 
 @mixin text-small {
 	font: normal 13px/150% $serif;
@@ -103,8 +103,8 @@
 	> a,
 	> p > a {
 		@include default-link;		
-		}
 	}
+}
 
 
 // Create base classes based on mixin
@@ -115,8 +115,8 @@
 	// For instances with multiple paragraphs, add margin 
 	> p {
 		margin-bottom: 16px;
-		}	
-	}
+	}	
+}
 
 .text, .txt,
 .text-m, .text-med, 
@@ -126,8 +126,8 @@
 	// For instances with multiple paragraphs, add margin 
 	> p {
 		margin-bottom: 12px;
-		}
 	}
+}
 
 .text-s, .txt-s,
 .text-small, .txt-small {
@@ -136,8 +136,8 @@
 	// For instances with multiple paragraphs, add margin 
 	> p {
 		margin-bottom: 10px;
-		}	
-	}
+	}	
+}
 
 
 /* !-- Misc. Type -------------------------------- */
@@ -148,21 +148,21 @@
 	color: #000;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	}
+}
 
 @mixin source {
 	font: bold 10px $serif;
 	color: #bbb;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	}
+}
 
 @mixin breadcrumb-glyph {
 	content: '\203A'; // Entity for the caret ">" character
 	margin-left: 8px;
 	position: relative;
 	top: -1px;	
-	}
+}
 
 @mixin breadcrumb {
 	margin: 0 0 18px;
@@ -176,15 +176,15 @@
 		margin-right: 7px;
 		&:not(:last-child):after {
 			@include breadcrumb-glyph;	
-			}
+		}
 		// Rewrite this rule so IE 7-8 understand
 		.ie &:after {
 			@include breadcrumb-glyph;	
-			}
+		}
 		.ie &.last:after {
 			content: "";
-			}
 		}
+	}
 	
 	> li > a {
 		@include trans;
@@ -192,25 +192,25 @@
 		color: #aaa;
 		&:hover {
 			color: #666;
-			}
 		}
 	}
+}
 
 
 // Create base classes from misc. text styles	
 .src,
 .source {
 	@include source;
-	}
+}
 
 .overline {
 	@include overline;
 	margin-bottom: 10px;
-	}
+}
 
 .breadcrumb {
 	@include breadcrumb;
-	}
+}
 
 
 /* !-- Bugs ----------------------------------- */
@@ -234,17 +234,17 @@ $bug-notice: #62cffc;
 	@include border-radius(3px);
 	&.new {
 		background-color: $bug-new;
-		}
+	}
 	&.important {
 		background-color: $bug-important;
-		}
+	}
 	&.warning {
 		background-color: $bug-warning;
-		}
+	}
 	&.success {
 		background-color: $bug-success;
-		}
+	}
 	&.notice {
 		background-color: $bug-notice;
-		}
 	}
+}

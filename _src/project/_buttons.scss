@@ -47,11 +47,11 @@
 	&:hover {
 		cursor: pointer;
 		background-position: 0 -15px;	
-		}
+	}
 	&:focus {
 		outline: 1px dotted #666;	
-		}
 	}
+}
 
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -67,15 +67,15 @@
 	@include text-shadow(rgba(255, 255, 255, 0.75), 0, 1px, 1px);
 	&.active, &:active {
 		@include box-shadow(rgba(0, 0, 0, .25) 0 2px 4px inset, rgba(0, 0, 0, .05) 0 1px 2px);
-		}
+	}
 	&.disabled, &[disabled],
 	&.disabled:hover, &[disabled]:hover {
 		cursor: default;
 		background-image: none;
 		@include opacity(.65);
 		@include box-shadow(none);
-		}	
-	}
+	}	
+}
 
 @mixin btn-dark {
 	color: #fff;
@@ -85,12 +85,12 @@
 	background-repeat: repeat-x;
 	@include background-image(linear-gradient(top, #049cdb, #0064cd));
 	@include text-shadow(rgba(0, 0, 0, 0.25) 0 -1px 0);
-	}
+}
 
 @mixin btn-alt {
 	// If you have a third button style
 	// You can put the code here, ya' hear?
-	}
+}
 
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -100,17 +100,17 @@
 @mixin btn-size-small {
 	font-size: 11px;
 	padding: 4px 11px 5px;		
-	}
+}
 
 @mixin btn-size-med {
 	font-size: 13px;
 	padding: 5px 14px 6px;	
-	}
+}
 
 @mixin btn-size-large {
 	font-size: 14px;
 	padding: 7px 16px 8px;		
-	}
+}
 
 
 
@@ -129,23 +129,23 @@ $btn-style: light !default;
 	// Define button sizes & definitions
 	@if $btn-size == "s" or $btn-size == "small" {
 		@include btn-size-small;
-		}
+	}
 	@if $btn-size == "m" or $btn-size == "med" or $btn-size == "medium" or $btn-size == "reg" {
 		@include btn-size-med;
-		}
+	}
 	@if $btn-size == "l" or $btn-size == "large" {
 		@include btn-size-large;
-		}
+	}
 
 
 	// Define button styles & definitions	
 	@if $btn-style == "light" or $btn-style == "lt" or $btn-style == "reg" {
 		@include btn-light;
-		}
+	}
 	@if $btn-style == "dark" or $btn-style == "dk" {
 		@include btn-dark;
-		}
-	} // end btn
+	}
+} // end btn
 
 
 
