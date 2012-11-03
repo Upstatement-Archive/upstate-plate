@@ -255,8 +255,6 @@ button {
 /* !============================================= */
 /* !-- Universal ------------------------------------ */
 /* !-- Project ------------------------------------ */
-/* !== Transitions ==================================== */
-/* !== Sprites ==================================== */
 .sprite-sprite, .sprite-edit-off {
   background: url('../_img/sprite-scc1f2af80b.png') no-repeat;
 }
@@ -267,8 +265,6 @@ button {
   width: 1px;
 }
 
-/* !== Retina Sprites ==================================== */
-/* !== Paul Irish HTML5 Helpers =================== */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -282,16 +278,12 @@ button {
 /* !============================================= */
 /* ! Custom Fonts					   			  */
 /* !============================================= */
-/* Follow this format, y'hear:
+@font-face {
+  font-family: "Knockout32";
+  src: url('../_fonts/knockout/knockout-32.eot');
+  src: url('../_fonts/knockout/knockout-32?#iefix') format("embedded-opentype"), url('../_fonts/knockout/knockout-32.woff') format("woff"), url('../_fonts/knockout/knockout-32.ttf') format("truetype"), url('../_fonts/knockout/knockout-32.svg#webfontABgg4EO0') format("svg");
+}
 
-	@font-face { 
-		font-family: "Knockout32"; 
-		src: font-url('knockout/knockout-32.eot');
-		src: font-url('knockout/knockout-32?#iefix') format('embedded-opentype'),
-			 font-url('knockout/knockout-32.woff') format('woff'), 
-			 font-url('knockout/knockout-32.ttf') format('truetype'), 
-			 font-url('knockout/knockout-32.svg#webfontABgg4EO0') format('svg'); }	
-*/
 /* !============================================= */
 /* ! Universal						   			  */
 /* !============================================= */

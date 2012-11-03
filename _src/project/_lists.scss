@@ -15,7 +15,10 @@
 		color: #222;
 	}
 	> li > a {
-		@include default-link;
+		color: $link;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	// Add class of "horiz" to any standard list to make it horizontal 
