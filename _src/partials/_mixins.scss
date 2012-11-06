@@ -1,30 +1,62 @@
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
+//	Mixins							 			   
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Layout container width for use as universal variable with em calculators
 $context: 960 !default;
 
-//What is this and how does it work?
-@mixin respw($target, $context){
-	width: percentage($target / $context); 
-}
 
-//What is this and how does it work?
+// Flexible Grid Propotion Calculator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Figuring out the ideal percentage of a responsive container.
+// Based on the equation target / context = result.
+// Math usually based on values takne from a static design.
+// WHY: Math is easier this way.
+// REF: http://www.lukew.com/ff/entry.asp?1167
+// USE: width: resp(300px);
 @function resp($target, $context){
 	@return percentage($target / $context); 
 }
 
+// Em Calculator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Filling psuedo-clases :before, :after with blank content
+// WHY: Psuedo classes won't appear unless you fill them with content.
+// This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+// USE: @include content;
 @function em($px, $doc:13){
 	@return #{($px/$doc)}em;	
 }
 
+// Content
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Filling psuedo-clases :before, :after with blank content
+// WHY: Psuedo classes won't appear unless you fill them with content.
+// This mixin includes the difficult-to-recall cross-browser character code for "blank". 
+// USE: @include content;
 @mixin content($content: \0020) {
 	content: "#{$content}";
 }
 
-/* !== Transitions ==================================== */
+// Transitions
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quick application of transition properties
+// WHY: This are our most common defaults
+// USE: @include trans;
+// USE: @include trans(.1s, opacity, linear);
 @mixin trans($trans-time: .2s, $trans-property: all, $trans-function: ease-in) {
 	@include single-transition(#{$trans-property}, #{$trans-time}, #{$trans-function}, false);
 }
 
-//What is this and how does it work?
+// User Select
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Making text unselectable by the user
+// WHY: Sometimes the cursor highlights text on clickable elements (in particular buttons),
+// which can confuse the user intent. This is especially true on touch interfaces. 
+// This mixin is an easy cross-browser way to repress text selection.
+// USE: @include user-select;
 @mixin user-select($user-select: none) {
 	-webkit-user-select: #{$user-select};
 	-khtml-user-select: #{$user-select};
@@ -34,7 +66,12 @@ $context: 960 !default;
 	user-select: #{$user-select};
 }
 
-//What is this and how does it work?
+
+// Reset Clearfix
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Removing pie-clearfix from an element after it's been applied
+// WHY: Hard to remember attribute combo. Helpful in responsive layouts.
+// USE: @include reset-clearfix;
 @mixin reset-clearfix {
 	&:after {
 		display: initial;
@@ -43,7 +80,12 @@ $context: 960 !default;
 }
 
 
-//What is this and how does it work?
+// Triangles
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Quickly making CSS triangles
+// WHY: It's annoying to remember how these attribute work. 
+// Plus CSS triangles are really flexible and awesome.
+// USE: @include triangle(right, 6px, #000, .68);
 @mixin triangle($tri-orientation: down, $tri-width: 3px, $tri-color: #666, $mult:1) {
 	@include rotate(.1deg);
 	
@@ -74,14 +116,24 @@ $context: 960 !default;
 	}
 }
 
-// Truncate text with an ellipsis using this annoying-to-recall combination of attributes 
+// Ellipsis
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Truncating text with an ellipsis the CSS way
+// WHY: It's hard to recall using this combination of attributes
+// USE: @include ellipsis;
 @mixin ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
-// Shortcut for styling placeholder text in forms
+
+// Placeholder Text
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Styling placeholder text color states (default, hover, focus) 
+// WHY: Provides a shortcut for writing the code, which is necessarily long
+// because selectors cannot be combined. Also a cross-browser solution.
+// USE: @include placholder(#999, #999, #222);
 @mixin placeholder($default: inherit, $hover: $default, $focus: $default){
 	// You have to declare these separately in order to work
 	&::-webkit-input-placeholder {
@@ -104,6 +156,14 @@ $context: 960 !default;
 	}
 }
 	
+
+// FOUT: Flash of Unstyled Type
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Making text appear on the page only after webfonts have loaded.
+// Doesn't work without the hooks provided by using Google Webfont Loader (see: snips.html).
+// WHY: Who wants to write this same six lines of code over and over?
+// USE: @include fout;
+
 // Pattern for resolving Flash-Of-Unstyled-Type
 @mixin fout {
 	.wf-loading & {
@@ -116,7 +176,12 @@ $context: 960 !default;
 }
 
 
-/* !== Sprites ==================================== */
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//
+// Sprites	
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 
 // Let Compass make Sprites for us
 // http://compass-style.org/help/tutorials/spriting/
@@ -128,7 +193,9 @@ $sprite-sprite-dimensions:true;
 @import "sprite/*.png";
 @include all-sprite-sprites;
 
-/* !== Retina Sprites ==================================== */
+//
+// Retina Sprites 
+//
 
 // UNCOMMENT TO ENABLE RETINA SPRITES
 // Place all your retina images in retina folder
@@ -155,7 +222,11 @@ $sprite-sprite-dimensions:true;
 
 
 
-/* !== Paul Irish HTML5 Helpers =================== */
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//
+// Paul Irish HTML5 Helpers	
+//
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 // Image replacement
 @mixin ir { 

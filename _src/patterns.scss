@@ -1,6 +1,7 @@
-/* Bring in all Compass Helpers as well as Tito's base style files */
+// Bring in all Compass Helpers as well as Tito's base style files
 @import "partials/base";
 
+// Redefine $sans variable for patterns only
 $sans: "Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;
 
 .page-width {
@@ -174,8 +175,9 @@ dl, dt, dd {
 	}
 }
 
-/* Code
-================================== */
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// Code	
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 .style-meta .code-snip {
 	display: block;
@@ -221,17 +223,17 @@ dl, dt, dd {
 	.highlight {
 		color: rgba(179, 45, 71, 1.0);
 	}
-} /* end .style-meta .code-snip */ 
+} // end .style-meta .code-snip
 
 
-/* Specify class=linenums on a pre to get line numbering */
+// Specify class=linenums on a pre to get line numbering
 ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
 @for $i from 0 through 50 {
 	li.L#{$i} {
 		list-style-type: none;
 	}
 }	
-/* Alternate shading for lines */
+// Alternate shading for lines
 li.L1,li.L3,li.L5,li.L7,li.L9 { }
 
 
