@@ -52,6 +52,30 @@
 <!-- Footer 							-->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<!-- Tweet! by SeaOfClouds -->
+<!-- a sweet JQuery library for bringing in tweets, way better than twitter's own JS -->
+<!-- http://tweet.seaofclouds.com/ -->
+<script type="text/javascript" src="_js/libs/jquery.tweet.js"></script>
+
+<!-- init for Tweet (put in script.js or <head>) -->
+<script type='text/javascript'>
+    jQuery(function($){
+        $(".tweet").tweet({
+            username: "upstatement",
+            join_text: "auto",
+            avatar_size: 32,
+            count: 3,
+            auto_join_text_default: "we said,", 
+            auto_join_text_ed: "we",
+            auto_join_text_ing: "we were",
+            auto_join_text_reply: "we replied to",
+            auto_join_text_url: "we were checking out",
+            loading_text: "loading tweets..."
+        });
+    });
+</script>
+
+
 <!-- Masonry by Desandro -->
 <script type="text/javascript" src="_js/libs/jquery.masonry.min.js"></script>
 
