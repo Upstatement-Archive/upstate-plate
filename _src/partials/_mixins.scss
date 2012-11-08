@@ -157,6 +157,38 @@ $context: 960 !default;
 }
 	
 
+// SVG Fallback Pattern
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting PNG fallbacks for SVG background images
+// WHY: Saves time and typing and is guaranteed to work across devices 
+// NOTE 1: You still need to set the display (inline-block or block) 
+// and a height/width for the container
+// NOTE 2: "image-url" is a helper that automatically creates a relative link to the _img folder
+// from wherever it's called. This function is built-in to Compass. It's rare that you'll need
+// change the base folder (_img) but it can be done in the config.rb file in the root 
+// REF: http://compass-style.org/reference/compass/helpers/urls
+// USE: @include svg(imageName);
+
+@mixin svg($image) {
+	// Variables
+	$path: "_icons/";
+	$svg: $path + $image + ".svg";
+	$png: $path + $image + ".png";
+
+	// Universal properties
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+
+	// Fallback pattern
+	.no-svg & {
+		background-image: image-url($png);
+	}
+	.svg & {
+		background-image: image-url($svg);
+	}
+} // svg
+
+
 // FOUT: Flash of Unstyled Type
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Making text appear on the page only after webfonts have loaded.
