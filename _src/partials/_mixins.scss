@@ -303,6 +303,31 @@ $context: 960 !default;
 }
 
 
+// Retina Background Images
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Giving yourself a responsive video that maintains its aspect ratio 
+// WHY: Annoying to remember/lookup
+// REF: http://webdesignerwall.com/tutorials/css-elastic-videos
+// USE: @include video;
+
+@mixin video($aspect: 56.25%) {
+    position: relative;
+    padding-bottom: $aspect;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    iframe,  
+    object,  
+    embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+}
+
+
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 //
 // Sprites	
@@ -312,13 +337,13 @@ $context: 960 !default;
 
 // Let Compass make Sprites for us
 // http://compass-style.org/help/tutorials/spriting/
-@import "compass/utilities/sprites/base";
+//@import "compass/utilities/sprites/base";
 
 // Make a sprite from all the images in the "_img > sprite" folder
-$sprite-layout:horizontal;
-$sprite-sprite-dimensions:true;
-@import "sprite/*.png";
-@include all-sprite-sprites;
+//$sprite-layout:horizontal;
+//$sprite-sprite-dimensions:true;
+//@import "sprite/*.png";
+//@include all-sprite-sprites;
 
 //
 // Retina Sprites 
