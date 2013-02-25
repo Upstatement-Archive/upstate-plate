@@ -303,14 +303,17 @@ $context: 960 !default;
 }
 
 
-// Retina Background Images
+// Responsive Video
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Giving yourself a responsive video that maintains its aspect ratio 
 // WHY: Annoying to remember/lookup
 // REF: http://webdesignerwall.com/tutorials/css-elastic-videos
 // USE: @include video;
 
-@mixin video($aspect: 56.25%) {
+@mixin video($aspect: $wide) {
+	$wide: 56.25%;
+	$tv: 75%;
+
     position: relative;
     padding-bottom: $aspect;
     padding-top: 30px;
