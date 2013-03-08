@@ -267,6 +267,40 @@ $context: 960 !default;
 } // svg
 
 
+// RGBA Background Fallback Pattern
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting safe fallbacks for RGBA background colors (black & white only)
+// WHY: Saves time and typing; guaranteed to work across devices 
+// USE: @include bg(.5, black);
+
+@mixin bg($color: white, $alpha: .1) {
+	// Turn decimal into whole number
+	$a-integer: $alpha * 100;
+
+
+	@if $color == transparent {
+		background-color: transparent;
+		.no-rgba & {
+			background-color: transparent;
+		}
+	}
+	@else {
+		background-color: $color;
+
+		@if $color == white {
+			background-color: rgba(255,255,255,$alpha);
+		}
+		@else {
+			background-color: rgba(0,0,0,$alpha);
+		}
+
+		.no-rgba & {
+			background: transparent image-url('_bg/#{$color}-#{$a-integer}.png') 50% 50% repeat;
+		}
+	}
+}
+
+
 // FOUT: Flash of Unstyled Type
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 // FOR: Making text appear on the page only after webfonts have loaded.
@@ -310,9 +344,14 @@ $context: 960 !default;
 // REF: http://webdesignerwall.com/tutorials/css-elastic-videos
 // USE: @include video;
 
-@mixin video($aspect: $wide) {
-	$wide: 56.25%;
-	$tv: 75%;
+@mixin video($aspect: wide) {
+
+	@if $aspect == wide or $aspect == cinema or $aspect == 16/9 {
+		$aspect: 56.25%;
+	}
+	@else if $aspect == tv or $aspect == 4/3 {
+		$aspect: 75%;
+	}
 
     position: relative;
     padding-bottom: $aspect;

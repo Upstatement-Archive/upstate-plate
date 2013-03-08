@@ -65,13 +65,6 @@
 /* !============================================= */
 
 
-
-@mixin ui-grid($ui-block-num) {
-	
-	
-	
-}
-
 /* Grid-2 vars */
 
 $width-1: 50% !default; 
@@ -282,19 +275,90 @@ $margin5-r: 8% !default;
 }
 
 
-/* ! Columns */
 
-.ui-block-25 {
-	width: 25%;
-}
+/* !============================================= */
 
-.ui-block-50 {
-	width: 50%;
-}
+/* ! Micro Layouts						   		  */ 
 
-.ui-block-75 {
-	width: 75%;
-}
+/* !============================================= */
+
+
+// Art & Text Pairs
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Harmoniously placing art and text next to each other. 
+// Good for thumbnails/text and many other art/text situations
+// WHY: It's a common pattern. It's easier to write this way.
+
+// HTML:
+// <article class="l-pair">
+//	<div class="art-block">
+//		<img class="art" src="#" />
+//	</div> <!-- /art-block -->
+//	<div class="txt-block">
+//		<h1>Headline</h1>
+//		<p>Paragraph paragraph paragraph paragraph</p>
+//	</div> <!-- /txt-block --> 
+// </article> <!-- /l-pair -->
+
+// USE: @include pair(100px, 30px);
+
+@mixin pair($art-width: 50px, $art-margin: 20px, $v-align: middle) {
+	@include pie-clearfix;
+
+	@if $v-align == middle {
+		display: table;
+
+		.art-block {
+			display: table-cell;
+			width: $art-width;
+			margin: 0;
+			> .art {
+				@include resp-img;
+			}
+		}
+		.txt-block {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: $art-margin;
+		}
+
+		// If lower than IE8, which has no
+		// support for tables
+		.lt-ie8 {
+			.art-block,
+			.txt-block {
+				display: block;
+			}
+			.art-block {
+				width: $art-width;
+				float: left;
+			}
+			.txt-block {
+				margin-left: $art-width + $art-margin;
+			}
+		} // .lt-ie8
+	} //middle
+
+	@else {
+		.art-block,
+		.txt-block {
+			display: block;
+		}
+		.art-block {
+			width: $art-width;
+			float: left;
+			margin: 0;
+			> .art {
+				@include resp-img;
+			}
+		}
+		.txt-block {
+			margin-left: $art-width + $art-margin;
+		}		
+	}
+
+} //pair	
+
 
 	
 /* !============================================= */
