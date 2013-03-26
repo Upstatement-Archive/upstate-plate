@@ -88,7 +88,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -396,7 +396,6 @@ button {
 #style-hdr .style-tab > a {
   -webkit-transition: color 0.2s ease-in;
   -moz-transition: color 0.2s ease-in;
-  -ms-transition: color 0.2s ease-in;
   -o-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in;
   color: #999;
@@ -442,11 +441,11 @@ button {
   font-weight: bold;
   margin: 0 0 16px;
   padding: 6px;
-  text-shadow: 1px 0 0 #000000;
+  text-shadow: 1px 0 0 black;
 }
 
 .style-node {
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #cccccc;
   margin: 30px 0 0;
   padding: 30px 0 0;
   *zoom: 1;
@@ -480,7 +479,7 @@ button {
 .style-meta-container {
   float: left;
   padding: 0 2% 0 1%;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #cccccc;
   width: 40%;
 }
 
@@ -505,7 +504,7 @@ dl, dt, dd {
 .style-meta dd {
   margin: 4px 0 12px;
   padding: 0 0 12px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
 }
 
 .style-meta dd:last-child {
@@ -559,7 +558,7 @@ dl, dt, dd {
 }
 .style-meta .code-snip pre .nocode {
   background-color: none;
-  color: #000;
+  color: black;
 }
 .style-meta .code-snip pre .str {
   color: #ffa0a0;
@@ -572,10 +571,10 @@ dl, dt, dd {
   color: #ffa0a0;
 }
 .style-meta .code-snip pre .typ {
-  color: #98fb98;
+  color: palegreen;
 }
 .style-meta .code-snip pre .lit {
-  color: #cd5c5c;
+  color: indianred;
 }
 .style-meta .code-snip pre .pun {
   color: rgba(255, 255, 255, 0.35);
@@ -589,10 +588,10 @@ dl, dt, dd {
   font-weight: bold;
 }
 .style-meta .code-snip pre .atv {
-  color: #87ceeb;
+  color: skyblue;
 }
 .style-meta .code-snip pre .dec {
-  color: #98fb98;
+  color: palegreen;
 }
 .style-meta .code-snip pre .pln {
   color: rgba(255, 255, 255, 0.35);
@@ -600,13 +599,11 @@ dl, dt, dd {
 .style-meta .code-snip pre .pln:first-child {
   width: 20px;
   height: 14px;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-}
-.style-meta .code-snip pre .pln:first-child {
+  zoom: 1;
   *display: inline;
 }
 .style-meta .code-snip li:last-child .pln:first-child {
@@ -620,7 +617,7 @@ dl, dt, dd {
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
-  color: #AEAEAE;
+  color: #aeaeae;
 }
 
 /* IE indents via margin-left */
@@ -834,7 +831,7 @@ li.L50 {
   }
 
   pre .str, code .str {
-    color: #060;
+    color: #006600;
   }
 
   pre .kwd, code .kwd {
@@ -853,15 +850,15 @@ li.L50 {
   }
 
   pre .lit, code .lit {
-    color: #044;
+    color: #004444;
   }
 
   pre .pun, code .pun {
-    color: #440;
+    color: #444400;
   }
 
   pre .pln, code .pln {
-    color: #000;
+    color: black;
   }
 
   pre .tag, code .tag {
@@ -870,10 +867,10 @@ li.L50 {
   }
 
   pre .atn, code .atn {
-    color: #404;
+    color: #440044;
   }
 
   pre .atv, code .atv {
-    color: #060;
+    color: #006600;
   }
 }

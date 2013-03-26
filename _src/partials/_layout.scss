@@ -302,13 +302,14 @@ $margin5-r: 8% !default;
 
 // USE: @include pair(100px, 30px);
 
-@mixin pair($art-width: 50px, $art-margin: 20px, $v-align: middle) {
+@mixin pair($art-width: 50px, $art-margin: 20px, $v-align: middle, $direction: left) {
+	$gutter: $art-width + $art-margin; 
 	@include pie-clearfix;
 
 	@if $v-align == middle {
 		display: table;
 
-		.art-block {
+		.art-bd {
 			display: table-cell;
 			width: $art-width;
 			margin: 0;
@@ -316,7 +317,7 @@ $margin5-r: 8% !default;
 				@include resp-img;
 			}
 		}
-		.txt-block {
+		.txt-bd {
 			display: table-cell;
 			vertical-align: middle;
 			padding-left: $art-margin;
@@ -325,40 +326,47 @@ $margin5-r: 8% !default;
 		// If lower than IE8, which has no
 		// support for tables
 		.lt-ie8 {
-			.art-block,
-			.txt-block {
+			.art-bd,
+			.txt-bd {
 				display: block;
 			}
-			.art-block {
+			.art-bd {
 				width: $art-width;
 				float: left;
 			}
-			.txt-block {
-				margin-left: $art-width + $art-margin;
+			.txt-bd {
+				margin-left: $gutter;
 			}
 		} // .lt-ie8
 	} //middle
 
 	@else {
-		.art-block,
-		.txt-block {
+		.art-bd,
+		.txt-bd {
 			display: block;
 		}
-		.art-block {
+		.art-bd {
 			width: $art-width;
-			float: left;
+			@if $direction == right {
+				float: right;
+			} else {
+				float: left;
+			}
 			margin: 0;
 			> .art {
 				@include resp-img;
 			}
 		}
-		.txt-block {
-			margin-left: $art-width + $art-margin;
+		.txt-bd {
+			@if $direction == right {
+				margin-right: $gutter;
+			} else {
+				margin-left: $gutter;
+			}
 		}		
 	}
 
 } //pair	
-
 
 	
 /* !============================================= */
