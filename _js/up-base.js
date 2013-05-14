@@ -37,6 +37,11 @@ var upBase;
 			$(f+":last-child").addClass("last");
 		}
 		$("table tr:odd").addClass("odd");
+		//nth-child fixes for media-grid
+		$(".media-block:nth-child(2n+3)").addClass("n2");
+		$(".media-block:nth-child(3n+4)").addClass("n3");
+		$(".media-block:nth-child(4n+5)").addClass("n4");
+		$(".media-block:nth-child(5n+6)").addClass("n5");
 	}
 
 	UpBase.prototype.initTabs = function(){

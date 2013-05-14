@@ -32,6 +32,9 @@
 			&:nth-child(2n+3) {
 				clear: left;
 			}
+			&.n2 {
+				clear:left;
+			}
 		}
 		@if $num == 3 or $num == "three" {
 			width: 33.3333%;
@@ -41,10 +44,16 @@
 			.ie7 & {
 				width: 33%;
 			}
+			&.n3 {
+				clear: left;
+			}
 		}
 		@if $num == 4 or $num == "four" {
 			width: 25%;
 			&:nth-child(4n+5) {
+				clear: left;
+			}
+			&.n4 {
 				clear: left;
 			}
 		}
@@ -53,6 +62,9 @@
 				clear: left;
 			}
 			width: 20%;
+			&.n5 {
+				clear: left;
+			}
 		}
 	}
 } //media-grid
