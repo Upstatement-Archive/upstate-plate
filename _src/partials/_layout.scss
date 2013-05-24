@@ -32,7 +32,7 @@
 			&:nth-child(2n+3) {
 				clear: left;
 			}
-			&.n2 {
+			&.n3 {
 				clear:left;
 			}
 		}
@@ -44,7 +44,7 @@
 			.ie7 & {
 				width: 33%;
 			}
-			&.n3 {
+			&.n4 {
 				clear: left;
 			}
 		}
@@ -53,7 +53,7 @@
 			&:nth-child(4n+5) {
 				clear: left;
 			}
-			&.n4 {
+			&.n5 {
 				clear: left;
 			}
 		}
@@ -62,7 +62,7 @@
 				clear: left;
 			}
 			width: 20%;
-			&.n5 {
+			&.n6 {
 				clear: left;
 			}
 		}
