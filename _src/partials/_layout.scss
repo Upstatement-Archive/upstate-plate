@@ -72,18 +72,84 @@
 
 /* !============================================= */
 
-/* ! Grids							   			  */ 
+/* ! UI Grids							   		  */ 
 
 /* !============================================= */
 
+// Static Column Grid Variation
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting one explicit column width while keeping the other liquid
+// WHY: It's annoying to remember this pattern and several numbers depend on one another
+// REF: http://alistapart.com/article/negativemargins
 
-/* Grid-2 vars */
+// HTML:
+// <div class="l-static">
+//	<section class="ui-block-1">
+//		<div class="ui-block-inner">
+//
+//			<!-- Block 1 Content Goes Here -->
+//
+//		</div> <!-- /ui-block-inner -->
+//	</section> <!-- /ui-block-1 -->
+//	<section class="ui-block-2">
+//		<div class="ui-block-inner">
+//
+//			<!-- Block 2 Content Goes Here -->
+//
+//		</div> <!-- /ui-block-inner -->
+//	</section> <!-- /ui-block-2 --> 
+// </article> <!-- /l-static -->
 
-$width-1: 50% !default; 
-$width-2: 50% !default; 
-$margin-r: 5% !default; 
+// USE: @include grid-static(300px, 40px);
 
-@mixin ui-grid-2($width-1,$width-2,$margin-r) {
+@mixin grid-static($width: 300px, $margin: 40px, $static-col: right) {
+	// Variables
+	$total: $width + $margin;
+
+	// If the right column has a static width
+	@if $static-col == right {
+		> .ui-block-1 {
+			width: 100%;
+			float: left;
+			margin-right: -$total;
+			> .ui-block-inner {
+				margin-right: $total;
+			}
+		}
+
+		> .ui-block-2 {
+			width: $width;
+			float: right;
+		}
+	} // right
+
+	// If the left column has a static width
+	@else {
+		> .ui-block-1 {
+			width: $width;
+			float: left;
+		}		
+		> .ui-block-2 {
+			width: 100%;
+			float: right;
+			margin-left: -$total;
+			> .ui-block-inner {
+				margin-left: $total;
+			}
+		}
+	} //else
+
+	@include pie-clearfix;
+}
+
+
+// Grid-2 vars
+
+$width-1: 50%; 
+$width-2: 50%; 
+$margin-r: 5%; 
+
+@mixin ui-grid-2($width-1: 50%, $width-2: 50%, $margin-r:5%) {
 	@include pie-clearfix;
 
 	> .ui-block-1,
@@ -101,7 +167,7 @@ $margin-r: 5% !default;
 	}
 }
 
-@mixin ui-grid-rl($width-1,$width-2,$margin-r) {
+@mixin ui-grid-rl($width-1: 50%, $width-2:50%, $margin-r:5%) {
 	@include pie-clearfix;
 
 	> .ui-block-1,	
@@ -118,7 +184,7 @@ $margin-r: 5% !default;
 	}
 }
 
-@mixin ui-grid-lr($width-1,$width-2,$margin-r) {
+@mixin ui-grid-lr($width-1:50%, $width-2:50%, $margin-r:5%) {
 	@include pie-clearfix;
 
 	> .ui-block-1,	
@@ -135,14 +201,9 @@ $margin-r: 5% !default;
 	}
 }
 
-/* Grid-3 vars */
+// Grid-3 vars 
 
-$width3-1: 33.333333% !default; 
-$width3-2: 33.333333% !default; 
-$width3-3: 33.333333% !default; 
-$margin3-r: 3.5% !default; 
-	
-@mixin ui-grid-3($width3-1,$width3-2,$width3-3,$margin3-r)  {
+@mixin ui-grid-3($width3-1: 33.333%, $width3-2: 33.333%, $width3-3: 33.333%, $margin3-r: 3.5%)  {
 	@include pie-clearfix;
 
 	> .ui-block-1,
@@ -167,9 +228,9 @@ $margin3-r: 3.5% !default;
 	}
 }
 
-/* Grid-3-rrl vars */
+// Grid-3-rrl vars
 	
-@mixin ui-grid-rrl($width3-1,$width3-2,$width3-3,$margin3-r)  {
+@mixin ui-grid-rrl($width3-1: 33.333%, $width3-2: 33.333%, $width3-3: 33.333%, $margin3-r: 3.5%)  {
 	@include pie-clearfix;
 
 	> .ui-block-1,
@@ -195,15 +256,9 @@ $margin3-r: 3.5% !default;
 }
 
 
-/* Grid-4 vars */
+// Grid-4 vars 
 
-$width4-1: 25% !default; 
-$width4-2: 25% !default; 
-$width4-3: 25% !default; 
-$width4-4: 25% !default; 
-$margin4-r: 8% !default; 
-
-@mixin ui-grid-4($width4-1,$width4-2,$width4-3,$width4-4,$margin5-r) {
+@mixin ui-grid-4($width4-1: 25%, $width4-2: 25%, $width4-3: 25%, $width4-4: 25%, $margin5-r: 8%) {
 
 	@include pie-clearfix;
 
@@ -237,16 +292,9 @@ $margin4-r: 8% !default;
 }
 
 
-/* Grid-5 vars */
+// Grid-5 vars
 
-$width5-1: 20% !default; 
-$width5-2: 20% !default; 
-$width5-3: 20% !default; 
-$width5-4: 20% !default; 
-$width5-5: 20% !default; 
-$margin5-r: 8% !default; 
-
-@mixin ui-grid-5($width5-1,$width5-2,$width5-3,$width5-4,$width5-5,$margin5-r) {
+@mixin ui-grid-5($width5-1: 20%, $width5-2: 20%, $width5-3: 20%, $width5-4: 20%, $width5-5: 20%, $margin5-r: 8%) {
 
 	@include pie-clearfix;
 
